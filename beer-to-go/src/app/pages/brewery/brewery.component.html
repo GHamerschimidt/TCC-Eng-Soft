@@ -1,0 +1,36 @@
+<div class="brewery-container">
+  <ng-container *ngIf="brewery$ | async as brewery; else loading">
+    <div class="brewery-information">
+      <div class="brewery-image">
+        <img [src]="brewery.imgPath" [alt]="brewery.name" />
+      </div>
+      <div class="brewery-details">
+        <h2>{{ brewery.name }}</h2>
+        <p class="brewery-description">{{ brewery.description }}</p>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #loading>
+    <div class="loading">
+      <p>Carregando informações da cervejaria...</p>
+    </div>
+  </ng-template>
+</div>
+
+<div class="beer-catalog">
+  <ng-container *ngIf="groupedBeers$ | async as groupedBeers">
+    <section *ngFor="let group of groupedBeers">
+      <h3 class="type-title">{{ group.type }}</h3>
+      <hr />
+      <div class="beer-list">
+        <app-beer-card
+          *ngFor="let beer of group.beers"
+          [beer]="beer"
+          class="beer-card"
+        >
+        </app-beer-card>
+      </div>
+    </section>
+  </ng-container>
+</div>

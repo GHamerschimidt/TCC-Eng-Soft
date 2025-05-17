@@ -1,0 +1,35 @@
+.card {
+  background-color: lightgrey;
+  height: 12rem;
+  border-radius: 1rem;
+  display: flex;
+  gap: 2rem;
+  padding: 0.7rem 1rem;
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px;
+
+  &:hover {
+    border-color: black;
+    cursor: pointer;
+  }
+}
+
+.card-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+  max-width: 68%;
+}
+
+.card-img {
+  width: 10rem;
+  height: 10rem;
+}

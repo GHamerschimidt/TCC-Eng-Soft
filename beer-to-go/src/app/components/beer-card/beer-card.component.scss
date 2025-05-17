@@ -1,0 +1,19 @@
+.card-specification {
+  border-left: 0.125rem solid black;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 32%;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.beer-specification {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
