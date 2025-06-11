@@ -28,9 +28,17 @@
           *ngFor="let beer of group.beers"
           [beer]="beer"
           class="beer-card"
+          (onClick)="showAddToCart(beer)"
         >
         </app-beer-card>
       </div>
     </section>
   </ng-container>
 </div>
+
+<app-add-to-cart
+  [visible]="isAddToCartVisible"
+  [breweryId]="(brewery$ | async)!.id"
+  [beer]="currentSelectedBeer"
+  (onHide)="this.closeAddToCart()"
+></app-add-to-cart>

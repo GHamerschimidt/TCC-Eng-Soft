@@ -1,0 +1,26 @@
+<p-dialog
+  [(visible)]="this.visible"
+  [modal]="true"
+  closable="true"
+  draggable="false"
+  [closeOnEscape]="false"
+  resizable="false"
+  (onHide)="this.closeDialog()"
+>
+  <ng-container *ngIf="!!beer">
+    <app-beer-card [beer]="beer" [variant]="this.beerCardVariant">
+    </app-beer-card>
+  </ng-container>
+
+  <ng-template #footer>
+    <div class="quantity-select">
+      <app-counter
+        [(count)]="selectedNumberOfItems"
+        [limit]="this.beer?.quantity"
+      ></app-counter>
+      <p-button class="add-button" (onClick)="addToCart()">{{
+        "Adicionar - " + (totalPrice() | currency)
+      }}</p-button>
+    </div>
+  </ng-template>
+</p-dialog>

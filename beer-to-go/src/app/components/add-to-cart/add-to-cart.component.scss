@@ -1,0 +1,21 @@
+:host ::ng-deep {
+  .p-dialog-mask {
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: backdrop-filter 0.2s ease-in-out;
+  }
+
+  .p-dialog {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.quantity-select {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+}
+
+::ng-deep .add-button .p-button {
+  width: 200px;
+}

@@ -1,0 +1,11 @@
+.counter-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .counter-value {
+    font-size: 1.2rem;
+    min-width: 2rem;
+    text-align: center;
+  }
+}

@@ -1,4 +1,8 @@
-<div class="card" (click)="this.onClick.emit()">
+<div
+  class="card"
+  [ngClass]="{ 'button-card': this.isCardButtonVariant() }"
+  (click)="this.onClick.emit()"
+>
   <img class="card-img" [src]="this.imgPath" [alt]="this.name" />
   <div class="card-info">
     <div class="card-details">

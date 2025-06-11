@@ -1,0 +1,19 @@
+<div class="counter-container">
+  <p-button
+    icon="pi pi-minus"
+    (onClick)="decrease()"
+    [rounded]="true"
+    severity="danger"
+    size="small"
+  >
+  </p-button>
+  <span class="counter-value">{{ count() }}</span>
+  <p-button
+    icon="pi pi-plus"
+    (onClick)="increase()"
+    [rounded]="true"
+    severity="success"
+    size="small"
+  >
+  </p-button>
+</div>

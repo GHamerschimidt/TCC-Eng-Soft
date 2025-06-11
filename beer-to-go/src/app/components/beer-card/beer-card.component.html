@@ -2,6 +2,8 @@
   [name]="this.beer.name"
   [imgPath]="this.beer.imgPath"
   [description]="this.beer.description"
+  [variant]="this.variant"
+  (onClick)="this.onClick.emit()"
 >
   <ng-content>
     <div class="card-specification">

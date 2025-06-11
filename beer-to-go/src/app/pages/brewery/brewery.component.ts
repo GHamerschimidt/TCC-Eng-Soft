@@ -4,15 +4,16 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { EMPTY, Observable, catchError, map, pipe, switchMap } from 'rxjs';
 import { BeerCardComponent } from '../../components/beer-card/beer-card.component';
 import { NotFoundError } from '../../errors/not-found.error';
-import { BeerTypeGroup } from '../../interfaces/beer.interface';
+import { Beer, BeerTypeGroup } from '../../interfaces/beer.interface';
 import { Brewery } from '../../interfaces/brewery.interface';
 import { BeerService } from '../../services/beer/beer.service';
 import { BreweryService } from '../../services/brewery/brewery.service';
+import { AddToCartComponent } from '../../components/add-to-cart/add-to-cart.component';
 
 @Component({
   selector: 'app-brewery',
   standalone: true,
-  imports: [CommonModule, BeerCardComponent],
+  imports: [CommonModule, BeerCardComponent, AddToCartComponent],
   templateUrl: './brewery.component.html',
   styleUrl: './brewery.component.scss',
 })
@@ -25,9 +26,21 @@ export class BreweryComponent implements OnInit {
   brewery$!: Observable<Brewery>;
   groupedBeers$!: Observable<BeerTypeGroup[]>;
 
+  isAddToCartVisible: boolean = false;
+  currentSelectedBeer?: Beer;
+
   ngOnInit(): void {
     this.brewery$ = this.route.paramMap.pipe(this.getBreweryFromRoute());
     this.groupedBeers$ = this.getGroupedBeersByType();
+  }
+
+  showAddToCart(beer: Beer): void {
+    this.currentSelectedBeer = beer;
+    this.isAddToCartVisible = true;
+  }
+
+  closeAddToCart(): void {
+    this.isAddToCartVisible = false;
   }
 
   private getBreweryFromRoute() {

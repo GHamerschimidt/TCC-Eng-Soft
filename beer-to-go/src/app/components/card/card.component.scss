@@ -1,16 +1,19 @@
 .card {
-  background-color: lightgrey;
   height: 12rem;
-  border-radius: 1rem;
   display: flex;
   gap: 2rem;
   padding: 0.7rem 1rem;
-  border-color: gray;
+}
+
+.button-card {
+  background-color: var(--p-slate-100);
+  border-radius: 1rem;
+  border-color: var(--p-slate-50);
   border-style: solid;
   border-width: 1px;
 
   &:hover {
-    border-color: black;
+    border-color: var(--p-slate-400);
     cursor: pointer;
   }
 }
