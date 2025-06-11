@@ -7,10 +7,10 @@
   resizable="false"
   (onHide)="this.closeDialog()"
 >
-  <ng-container *ngIf="!!beer">
-    <app-beer-card [beer]="beer" [variant]="this.beerCardVariant">
-    </app-beer-card>
-  </ng-container>
+  @if (!!beer) {
+  <app-beer-card [beer]="beer" [variant]="this.beerCardVariant">
+  </app-beer-card>
+  }
 
   <ng-template #footer>
     <div class="quantity-select">

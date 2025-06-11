@@ -1,35 +1,33 @@
 <div class="homepage-container">
   <h1>Cervejarias em destaque</h1>
   <hr />
-  <ng-container *ngIf="breweries$ | async as breweries; else loading">
-    <p-carousel
-      [value]="breweries"
-      [numScroll]="2"
-      [numVisible]="2"
-      [circular]="true"
-      [showIndicators]="false"
-    >
-      <ng-template let-brewery pTemplate="item">
-        <div class="outer-margin">
-          <div class="card-wrapper" (click)="navigateToBrewery(brewery.id)">
-            <div class="card">
-              <img
-                class="brewery-img"
-                [src]="brewery.imgPath"
-                [alt]="brewery.name"
-              />
-              <span class="text">{{ brewery.name }}</span>
-              <span class="text">{{ brewery.description }}</span>
-            </div>
+  @if (breweries$ | async; as breweries) {
+  <p-carousel
+    [value]="breweries"
+    [numScroll]="2"
+    [numVisible]="2"
+    [circular]="true"
+    [showIndicators]="false"
+  >
+    <ng-template let-brewery pTemplate="item">
+      <div class="outer-margin">
+        <div class="card-wrapper" (click)="navigateToBrewery(brewery.id)">
+          <div class="card">
+            <img
+              class="brewery-img"
+              [src]="brewery.imgPath"
+              [alt]="brewery.name"
+            />
+            <span class="text">{{ brewery.name }}</span>
+            <span class="text">{{ brewery.description }}</span>
           </div>
         </div>
-      </ng-template>
-    </p-carousel>
-  </ng-container>
-
-  <ng-template #loading>
-    <div class="loading">
-      <p>Carregando cervejarias...</p>
-    </div>
-  </ng-template>
+      </div>
+    </ng-template>
+  </p-carousel>
+  } @else {
+  <div class="loading">
+    <p>Carregando cervejarias...</p>
+  </div>
+  }
 </div>

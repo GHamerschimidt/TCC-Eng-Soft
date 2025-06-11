@@ -23,7 +23,7 @@
             [(count)]="item.selectedQuantity"
             [limit]="item.beer.quantity"
             [minValue]="1"
-            (countChange)="updateQuantity(item.beer.id, $event)"
+            (countChange)="onQuantityChange(item.beer.id, $event)"
           ></app-counter>
           <button
             pButton

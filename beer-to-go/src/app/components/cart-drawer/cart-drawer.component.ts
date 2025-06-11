@@ -1,24 +1,15 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   Input,
   Output,
-  Signal,
   computed,
   inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
 import { BreweryService } from '../../services/brewery/brewery.service';
-import {
-  Observable,
-  map,
-  switchMap,
-  filter,
-  Subject,
-  BehaviorSubject,
-} from 'rxjs';
+import { Observable, map, switchMap, filter } from 'rxjs';
 import { CartDetails } from '../../interfaces/cart-details.interface';
 import { Cart } from '../../interfaces/cart-item.interface';
 import { CounterComponent } from '../counter/counter.component';
@@ -36,11 +27,8 @@ export class CartDrawerComponent {
   @Input() visible: boolean = false;
 
   @Output() onHide = new EventEmitter<void>();
-
   private readonly cartService = inject(ShoppingCartService);
   private readonly breweryService = inject(BreweryService);
-
-  readonly cart$: Observable<Cart | null> = this.cartService.cartChanges$;
 
   readonly cartDetails$: Observable<CartDetails | null> =
     this.cartService.cartChanges$.pipe(
@@ -63,17 +51,12 @@ export class CartDrawerComponent {
       0
     );
   });
-
   onQuantityChange(beerId: number, newQuantity: number): void {
     if (newQuantity === 0) {
       this.cartService.removeItem(beerId);
-    } else {
-      this.cartService.updateQuantity(beerId, newQuantity);
+      return;
     }
-  }
-
-  updateQuantity(beerId: number, quantity: number): void {
-    this.cartService.updateQuantity(beerId, quantity);
+    this.cartService.updateQuantity(beerId, newQuantity);
   }
 
   removeItem(beerId: number): void {

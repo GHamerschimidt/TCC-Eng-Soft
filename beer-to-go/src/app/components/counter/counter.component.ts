@@ -1,18 +1,20 @@
-import { Component, EventEmitter, Input, model, Output } from '@angular/core';
+import { Component, Input, model } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
-import { CommonModule } from '@angular/common';
+
+const SHAKE_ANIMATION_DURATION = 300;
+const DEFAULT_MIN_VALUE = 0;
 
 @Component({
   selector: 'app-counter',
   standalone: true,
-  imports: [ButtonModule, CommonModule],
+  imports: [ButtonModule],
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.scss'],
 })
 export class CounterComponent {
   @Input() limit?: number;
-  @Input() minValue: number = 0;
-  count = model<number>(0);
+  @Input() minValue: number = DEFAULT_MIN_VALUE;
+  count = model<number>(DEFAULT_MIN_VALUE);
   isShaking = false;
 
   increase(): void {
@@ -39,6 +41,6 @@ export class CounterComponent {
     this.isShaking = true;
     setTimeout(() => {
       this.isShaking = false;
-    }, 300);
+    }, SHAKE_ANIMATION_DURATION);
   }
 }

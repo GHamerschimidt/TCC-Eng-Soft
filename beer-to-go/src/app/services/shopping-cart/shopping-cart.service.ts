@@ -2,6 +2,7 @@ import { Injectable, signal } from '@angular/core';
 import { Cart, CartItem } from '../../interfaces/cart-item.interface';
 import { Beer } from '../../interfaces/beer.interface';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Brewery } from '../../interfaces/brewery.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -19,8 +20,7 @@ export class ShoppingCartService {
   getCart(): Cart | null {
     return this.cartState();
   }
-
-  addItem(beer: Beer, brewery: { id: number }, quantity: number): void {
+  addItem(beer: Beer, brewery: Pick<Brewery, 'id'>, quantity: number): void {
     if (quantity <= 0) {
       return;
     }
@@ -118,7 +118,6 @@ export class ShoppingCartService {
       selectedQuantity: quantity,
     };
   }
-
   private updateExistingCartItems(
     items: CartItem[],
     itemToUpdate: CartItem
