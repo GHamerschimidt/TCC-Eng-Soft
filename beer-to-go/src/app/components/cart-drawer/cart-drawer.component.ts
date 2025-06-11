@@ -11,7 +11,15 @@ import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { DrawerModule } from 'primeng/drawer';
 import { InputTextModule } from 'primeng/inputtext';
-import { Observable, combineLatest, filter, map, switchMap, take } from 'rxjs';
+import {
+  Observable,
+  combineLatest,
+  filter,
+  map,
+  of,
+  switchMap,
+  take,
+} from 'rxjs';
 import { CartDetails } from '../../interfaces/cart-details.interface';
 import { Cart, CartItem } from '../../interfaces/cart-item.interface';
 import { BreweryService } from '../../services/brewery/brewery.service';
@@ -19,6 +27,7 @@ import { OrderService } from '../../services/order/order.service';
 import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
 import { UserService } from '../../services/user/user.service';
 import { CounterComponent } from '../counter/counter.component';
+import { NotificationService } from '../../services/notification/notification.service';
 
 @Component({
   selector: 'app-cart-drawer',
@@ -42,11 +51,12 @@ export class CartDrawerComponent {
   private readonly breweryService = inject(BreweryService);
   private readonly userService = inject(UserService);
   private readonly orderService = inject(OrderService);
+  private readonly notificationService = inject(NotificationService);
 
-  readonly cartDetails$: Observable<CartDetails | null> =
+  readonly cartDetails$: Observable<CartDetails | undefined> =
     this.cartService.cart$.pipe(
       switchMap((cart: Cart | null) => {
-        if (!cart) return Promise.resolve(null);
+        if (!cart) return of(undefined);
 
         return this.breweryService
           .getBreweryById$(cart.breweryId)
@@ -87,20 +97,26 @@ export class CartDrawerComponent {
       0
     );
   }
-
   finishOrder(): void {
     combineLatest([this.userService.getCurrentUser(), this.cartDetails$])
       .pipe(take(1))
       .subscribe(([user, cartDetails]) => {
         if (!user || !cartDetails) return;
 
-        this.orderService
-          .submitOrder(user.id, cartDetails)
-          .subscribe((response) => {
-            console.log('Ordem confirmada:', response);
+        this.orderService.submitOrder(user.id, cartDetails).subscribe({
+          next: (response) => {
+            this.notificationService.showSuccess(
+              `Pedido #${response.orderId} realizado com sucesso!`,
+              'Pedido Confirmado'
+            );
             this.visible.set(false);
             this.cartService.clearCart();
-          });
+          },
+          error: () =>
+            this.notificationService.showError(
+              'Houve um erro com o pedido, tente novamente mais tarde.'
+            ),
+        });
       });
   }
 }

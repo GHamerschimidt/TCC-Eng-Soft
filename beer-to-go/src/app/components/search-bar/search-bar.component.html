@@ -1,0 +1,17 @@
+<div class="search-bar">
+  <p-treeSelect
+    class="filter-select"
+    [options]="filterNodes"
+    [ngModel]="selectedFilter()"
+    [selectionMode]="'single'"
+    placeholder="Filtrar por..."
+    (ngModelChange)="onFilterChange($event)"
+  ></p-treeSelect>
+  <input
+    type="text"
+    pInputText
+    [ngModel]="searchTerm()"
+    (ngModelChange)="onInputChange($event)"
+    placeholder="Pesquisar..."
+  />
+</div>

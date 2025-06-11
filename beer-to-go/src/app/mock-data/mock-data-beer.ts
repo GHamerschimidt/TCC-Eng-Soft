@@ -126,7 +126,7 @@ export const BEER_LIST_ONE: Beer[] = [
 
 export const BEER_LIST_TWO: Beer[] = [
   {
-    id: 1,
+    id: 11,
     name: 'Bohemian Pilsner',
     type: BeerTypes.PILSNER,
     description:
@@ -138,7 +138,7 @@ export const BEER_LIST_TWO: Beer[] = [
     quantity: 5,
   },
   {
-    id: 2,
+    id: 12,
     name: 'Alpine Pilsner',
     type: BeerTypes.PILSNER,
     description:
@@ -150,7 +150,7 @@ export const BEER_LIST_TWO: Beer[] = [
     quantity: 7,
   },
   {
-    id: 3,
+    id: 13,
     name: 'West Coast IPA',
     type: BeerTypes.IPA,
     description:
@@ -162,7 +162,7 @@ export const BEER_LIST_TWO: Beer[] = [
     quantity: 4,
   },
   {
-    id: 4,
+    id: 14,
     name: 'Hazy Tropical IPA',
     type: BeerTypes.IPA,
     description: 'New England IPA nebulosa com manga, maracujá e abacaxi.',
@@ -173,7 +173,7 @@ export const BEER_LIST_TWO: Beer[] = [
     quantity: 6,
   },
   {
-    id: 5,
+    id: 15,
     name: 'Imperial Stout',
     type: BeerTypes.STOUT,
     description: 'Stout imperial potente com notas de cacau, café e baunilha.',
@@ -184,7 +184,7 @@ export const BEER_LIST_TWO: Beer[] = [
     quantity: 2,
   },
   {
-    id: 6,
+    id: 16,
     name: 'Oatmeal Stout',
     type: BeerTypes.STOUT,
     description:
@@ -196,7 +196,7 @@ export const BEER_LIST_TWO: Beer[] = [
     quantity: 5,
   },
   {
-    id: 7,
+    id: 17,
     name: 'Bavarian Weiss',
     type: BeerTypes.WEISS,
     description:
@@ -208,7 +208,7 @@ export const BEER_LIST_TWO: Beer[] = [
     quantity: 7,
   },
   {
-    id: 8,
+    id: 18,
     name: 'Summer Weiss',
     type: BeerTypes.WEISS,
     description: 'Cerveja de trigo leve e cítrica, perfeita para o verão.',
@@ -219,7 +219,7 @@ export const BEER_LIST_TWO: Beer[] = [
     quantity: 8,
   },
   {
-    id: 9,
+    id: 19,
     name: 'Vienna Lager',
     type: BeerTypes.LAGER,
     description:
@@ -231,7 +231,7 @@ export const BEER_LIST_TWO: Beer[] = [
     quantity: 38,
   },
   {
-    id: 10,
+    id: 20,
     name: 'Helles Lager',
     type: BeerTypes.LAGER,
     description: 'Lager alemã dourada e límpida com maltes premium.',
@@ -245,7 +245,7 @@ export const BEER_LIST_TWO: Beer[] = [
 
 export const BEER_LIST_THREE: Beer[] = [
   {
-    id: 1,
+    id: 21,
     name: 'Noble Pilsner',
     type: BeerTypes.PILSNER,
     description:
@@ -257,7 +257,7 @@ export const BEER_LIST_THREE: Beer[] = [
     quantity: 42,
   },
   {
-    id: 2,
+    id: 22,
     name: 'Crystal Pilsner',
     type: BeerTypes.PILSNER,
     description:
@@ -269,7 +269,7 @@ export const BEER_LIST_THREE: Beer[] = [
     quantity: 55,
   },
   {
-    id: 3,
+    id: 23,
     name: 'Double IPA',
     type: BeerTypes.IPA,
     description:
@@ -281,7 +281,7 @@ export const BEER_LIST_THREE: Beer[] = [
     quantity: 20,
   },
   {
-    id: 4,
+    id: 24,
     name: 'Session IPA',
     type: BeerTypes.IPA,
     description: 'IPA leve e sessionável com notas cítricas e final limpo.',
@@ -292,7 +292,7 @@ export const BEER_LIST_THREE: Beer[] = [
     quantity: 48,
   },
   {
-    id: 5,
+    id: 25,
     name: 'Chocolate Stout',
     type: BeerTypes.STOUT,
     description:
@@ -304,7 +304,7 @@ export const BEER_LIST_THREE: Beer[] = [
     quantity: 30,
   },
   {
-    id: 6,
+    id: 26,
     name: 'Coconut Stout',
     type: BeerTypes.STOUT,
     description: 'Stout tropical com coco torrado e baunilha natural.',
@@ -315,7 +315,7 @@ export const BEER_LIST_THREE: Beer[] = [
     quantity: 25,
   },
   {
-    id: 7,
+    id: 27,
     name: 'Dunkel Weiss',
     type: BeerTypes.WEISS,
     description:
@@ -327,7 +327,7 @@ export const BEER_LIST_THREE: Beer[] = [
     quantity: 35,
   },
   {
-    id: 8,
+    id: 28,
     name: 'Honey Weiss',
     type: BeerTypes.WEISS,
     description: 'Cerveja de trigo com mel silvestre, suave e aromática.',
@@ -338,7 +338,7 @@ export const BEER_LIST_THREE: Beer[] = [
     quantity: 40,
   },
   {
-    id: 9,
+    id: 29,
     name: 'Czech Lager',
     type: BeerTypes.LAGER,
     description: 'Lager tcheca tradicional com malte Moravia e lúpulo Saaz.',
@@ -349,7 +349,7 @@ export const BEER_LIST_THREE: Beer[] = [
     quantity: 45,
   },
   {
-    id: 10,
+    id: 30,
     name: 'Dark Lager',
     type: BeerTypes.LAGER,
     description: 'Lager escura com notas de caramelo e torrado suave.',
@@ -358,5 +358,572 @@ export const BEER_LIST_THREE: Beer[] = [
     ibu: 20,
     price: 15.9,
     quantity: 35,
+  },
+];
+
+export const BEER_LIST_FOUR: Beer[] = [
+  {
+    id: 31,
+    name: 'Pilsen do Sertão',
+    type: BeerTypes.PILSNER,
+    description:
+      'Pilsen artesanal com toque de rapadura, combinando a tradição europeia com sabores do nordeste brasileiro.',
+    imgPath: 'https://picsum.photos/seed/pilsner7/300/200',
+    abv: 4.6,
+    ibu: 23,
+    price: 13.9,
+    quantity: 45,
+  },
+  {
+    id: 32,
+    name: 'IPA Amazônica',
+    type: BeerTypes.IPA,
+    description:
+      'IPA tropical com adição de cupuaçu e maracujá da Amazônia, equilibrando notas frutadas com amargor pronunciado.',
+    imgPath: 'https://picsum.photos/seed/ipa7/300/200',
+    abv: 6.5,
+    ibu: 60,
+    price: 19.9,
+    quantity: 30,
+  },
+  {
+    id: 33,
+    name: 'Stout Café Mineiro',
+    type: BeerTypes.STOUT,
+    description:
+      'Stout encorpada com café especial de Minas Gerais e cacau orgânico da Bahia, rica e aromática.',
+    imgPath: 'https://picsum.photos/seed/stout7/300/200',
+    abv: 6.8,
+    ibu: 38,
+    price: 18.9,
+    quantity: 25,
+  },
+  {
+    id: 34,
+    name: 'Weiss Tropical',
+    type: BeerTypes.WEISS,
+    description:
+      'Cerveja de trigo com banana-prata madura e especiarias brasileiras, refrescante e aromática.',
+    imgPath: 'https://picsum.photos/seed/weiss7/300/200',
+    abv: 5.1,
+    ibu: 14,
+    price: 15.9,
+    quantity: 35,
+  },
+  {
+    id: 35,
+    name: 'Lager da Mata',
+    type: BeerTypes.LAGER,
+    description:
+      'Lager leve e cristalina com ingredientes da Mata Atlântica, notas sutis de ervas nativas.',
+    imgPath: 'https://picsum.photos/seed/lager7/300/200',
+    abv: 4.8,
+    ibu: 19,
+    price: 14.9,
+    quantity: 40,
+  },
+];
+
+export const BEER_LIST_FIVE: Beer[] = [
+  {
+    id: 36,
+    name: 'Pilsen Pantaneira',
+    type: BeerTypes.PILSNER,
+    description:
+      'Pilsen refrescante com arroz vermelho do Pantanal, proporcionando um sabor único e regional.',
+    imgPath: 'https://picsum.photos/seed/pilsner8/300/200',
+    abv: 4.7,
+    ibu: 24,
+    price: 13.9,
+    quantity: 38,
+  },
+  {
+    id: 37,
+    name: 'IPA Catarinense',
+    type: BeerTypes.IPA,
+    description:
+      'IPA com lúpulos cultivados em Santa Catarina, notas cítricas e florais com toque de mel de bracatinga.',
+    imgPath: 'https://picsum.photos/seed/ipa8/300/200',
+    abv: 6.3,
+    ibu: 58,
+    price: 18.9,
+    quantity: 42,
+  },
+  {
+    id: 38,
+    name: 'Stout Capixaba',
+    type: BeerTypes.STOUT,
+    description:
+      'Stout robusta com café do Espírito Santo e chocolate artesanal local, cremosa e intensa.',
+    imgPath: 'https://picsum.photos/seed/stout8/300/200',
+    abv: 6.5,
+    ibu: 34,
+    price: 17.9,
+    quantity: 28,
+  },
+  {
+    id: 39,
+    name: 'Weiss Nordestina',
+    type: BeerTypes.WEISS,
+    description:
+      'Cerveja de trigo com rapadura e especiarias do sertão, aroma tropical único.',
+    imgPath: 'https://picsum.photos/seed/weiss8/300/200',
+    abv: 5.0,
+    ibu: 13,
+    price: 15.9,
+    quantity: 45,
+  },
+  {
+    id: 40,
+    name: 'Lager Gaúcha',
+    type: BeerTypes.LAGER,
+    description:
+      'Lager tradicional com malte produzido no Rio Grande do Sul, sabor maltado e encorpado.',
+    imgPath: 'https://picsum.photos/seed/lager8/300/200',
+    abv: 5.1,
+    ibu: 21,
+    price: 14.9,
+    quantity: 50,
+  },
+];
+
+export const BEER_LIST_SIX: Beer[] = [
+  {
+    id: 41,
+    name: 'Pilsen Carioca',
+    type: BeerTypes.PILSNER,
+    description:
+      'Pilsen leve e refrescante com toque de mate, perfeita para a praia.',
+    imgPath: 'https://picsum.photos/seed/pilsner9/300/200',
+    abv: 4.5,
+    ibu: 22,
+    price: 13.9,
+    quantity: 55,
+  },
+  {
+    id: 42,
+    name: 'IPA do Cerrado',
+    type: BeerTypes.IPA,
+    description:
+      'IPA com pequi e frutos do cerrado, equilibrando amargor com notas frutadas nativas.',
+    imgPath: 'https://picsum.photos/seed/ipa9/300/200',
+    abv: 6.7,
+    ibu: 62,
+    price: 19.9,
+    quantity: 35,
+  },
+  {
+    id: 43,
+    name: 'Stout Paraense',
+    type: BeerTypes.STOUT,
+    description:
+      'Stout com cacau amazônico e castanha-do-pará, rica em sabores regionais.',
+    imgPath: 'https://picsum.photos/seed/stout9/300/200',
+    abv: 6.4,
+    ibu: 36,
+    price: 18.9,
+    quantity: 30,
+  },
+  {
+    id: 44,
+    name: 'Weiss Praiana',
+    type: BeerTypes.WEISS,
+    description:
+      'Weiss com coco e manga, refrescante com toques tropicais do litoral.',
+    imgPath: 'https://picsum.photos/seed/weiss9/300/200',
+    abv: 4.9,
+    ibu: 12,
+    price: 15.9,
+    quantity: 48,
+  },
+  {
+    id: 45,
+    name: 'Lager Mineira',
+    type: BeerTypes.LAGER,
+    description:
+      'Lager suave com toque de mel de flores silvestres de Minas Gerais.',
+    imgPath: 'https://picsum.photos/seed/lager9/300/200',
+    abv: 4.8,
+    ibu: 18,
+    price: 14.9,
+    quantity: 52,
+  },
+];
+
+export const BEER_LIST_SEVEN: Beer[] = [
+  {
+    id: 46,
+    name: 'Pilsen Paulista',
+    type: BeerTypes.PILSNER,
+    description:
+      'Pilsen moderna com ingredientes orgânicos de pequenos produtores do interior de São Paulo.',
+    imgPath: 'https://picsum.photos/seed/pilsner10/300/200',
+    abv: 4.8,
+    ibu: 25,
+    price: 14.9,
+    quantity: 40,
+  },
+  {
+    id: 47,
+    name: 'IPA Litorânea',
+    type: BeerTypes.IPA,
+    description:
+      'IPA com frutas cítricas do litoral brasileiro, refrescante e aromática.',
+    imgPath: 'https://picsum.photos/seed/ipa10/300/200',
+    abv: 6.0,
+    ibu: 55,
+    price: 18.9,
+    quantity: 33,
+  },
+  {
+    id: 48,
+    name: 'Stout Goiana',
+    type: BeerTypes.STOUT,
+    description:
+      'Stout com café do cerrado goiano e baunilha nativa, complexa e aromática.',
+    imgPath: 'https://picsum.photos/seed/stout10/300/200',
+    abv: 6.2,
+    ibu: 32,
+    price: 17.9,
+    quantity: 25,
+  },
+  {
+    id: 49,
+    name: 'Weiss da Serra',
+    type: BeerTypes.WEISS,
+    description:
+      'Weiss com frutas serranas e especiarias da região sul, refrescante e equilibrada.',
+    imgPath: 'https://picsum.photos/seed/weiss10/300/200',
+    abv: 5.2,
+    ibu: 14,
+    price: 16.9,
+    quantity: 38,
+  },
+  {
+    id: 50,
+    name: 'Lager Brasiliense',
+    type: BeerTypes.LAGER,
+    description:
+      'Lager clean e moderna como a capital, com maltes selecionados do centro-oeste.',
+    imgPath: 'https://picsum.photos/seed/lager10/300/200',
+    abv: 4.9,
+    ibu: 20,
+    price: 15.9,
+    quantity: 45,
+  },
+];
+
+export const BEER_LIST_EIGHT: Beer[] = [
+  {
+    id: 51,
+    name: 'Pilsen do Vale',
+    type: BeerTypes.PILSNER,
+    description:
+      'Pilsen com ingredientes do Vale do Paraíba, leve e cristalina.',
+    imgPath: 'https://picsum.photos/seed/pilsner11/300/200',
+    abv: 4.6,
+    ibu: 23,
+    price: 13.9,
+    quantity: 44,
+  },
+  {
+    id: 52,
+    name: 'IPA da Mantiqueira',
+    type: BeerTypes.IPA,
+    description:
+      'IPA com ervas aromáticas da Serra da Mantiqueira, complexa e única.',
+    imgPath: 'https://picsum.photos/seed/ipa11/300/200',
+    abv: 6.4,
+    ibu: 59,
+    price: 19.9,
+    quantity: 32,
+  },
+  {
+    id: 53,
+    name: 'Stout da Serra',
+    type: BeerTypes.STOUT,
+    description:
+      'Stout com café de altitude e chocolate artesanal serrano, encorpada e rica.',
+    imgPath: 'https://picsum.photos/seed/stout11/300/200',
+    abv: 6.6,
+    ibu: 35,
+    price: 18.9,
+    quantity: 28,
+  },
+  {
+    id: 54,
+    name: 'Weiss do Campo',
+    type: BeerTypes.WEISS,
+    description:
+      'Weiss com trigo do interior e mel silvestre, suave e aromática.',
+    imgPath: 'https://picsum.photos/seed/weiss11/300/200',
+    abv: 5.0,
+    ibu: 13,
+    price: 15.9,
+    quantity: 42,
+  },
+  {
+    id: 55,
+    name: 'Lager Fluminense',
+    type: BeerTypes.LAGER,
+    description:
+      'Lager tropical com toque de frutas cítricas do interior do Rio.',
+    imgPath: 'https://picsum.photos/seed/lager11/300/200',
+    abv: 4.7,
+    ibu: 19,
+    price: 14.9,
+    quantity: 48,
+  },
+];
+
+export const BEER_LIST_NINE: Beer[] = [
+  {
+    id: 56,
+    name: 'Pilsen da Floresta',
+    type: BeerTypes.PILSNER,
+    description:
+      'Pilsen com ingredientes sustentáveis da Amazônia, sabor único e refrescante.',
+    imgPath: 'https://picsum.photos/seed/pilsner12/300/200',
+    abv: 4.7,
+    ibu: 24,
+    price: 14.9,
+    quantity: 36,
+  },
+  {
+    id: 57,
+    name: 'IPA do Forte',
+    type: BeerTypes.IPA,
+    description:
+      'IPA baiana com pitadas de dendê e especiarias locais, tropical e marcante.',
+    imgPath: 'https://picsum.photos/seed/ipa12/300/200',
+    abv: 6.6,
+    ibu: 61,
+    price: 19.9,
+    quantity: 30,
+  },
+  {
+    id: 58,
+    name: 'Stout do Porto',
+    type: BeerTypes.STOUT,
+    description:
+      'Stout com café porto de Santos e cacau do sul da Bahia, robusta e complexa.',
+    imgPath: 'https://picsum.photos/seed/stout12/300/200',
+    abv: 6.5,
+    ibu: 37,
+    price: 18.9,
+    quantity: 25,
+  },
+  {
+    id: 59,
+    name: 'Weiss da Colônia',
+    type: BeerTypes.WEISS,
+    description:
+      'Weiss com banana orgânica e especiarias de colônias alemãs do sul.',
+    imgPath: 'https://picsum.photos/seed/weiss12/300/200',
+    abv: 5.1,
+    ibu: 14,
+    price: 16.9,
+    quantity: 40,
+  },
+  {
+    id: 60,
+    name: 'Lager do Litoral',
+    type: BeerTypes.LAGER,
+    description:
+      'Lager clara com toque de sal marinho e limão, perfeita para o verão.',
+    imgPath: 'https://picsum.photos/seed/lager12/300/200',
+    abv: 4.6,
+    ibu: 18,
+    price: 14.9,
+    quantity: 52,
+  },
+];
+
+export const BEER_LIST_TEN: Beer[] = [
+  {
+    id: 61,
+    name: 'Pilsen das Águas',
+    type: BeerTypes.PILSNER,
+    description:
+      'Pilsen com água mineral do Bonito, cristalina e extremamente refrescante.',
+    imgPath: 'https://picsum.photos/seed/pilsner13/300/200',
+    abv: 4.5,
+    ibu: 22,
+    price: 13.9,
+    quantity: 45,
+  },
+  {
+    id: 62,
+    name: 'IPA das Dunas',
+    type: BeerTypes.IPA,
+    description:
+      'IPA com notas de frutas tropicais dos lençóis maranhenses, exótica e aromática.',
+    imgPath: 'https://picsum.photos/seed/ipa13/300/200',
+    abv: 6.3,
+    ibu: 57,
+    price: 18.9,
+    quantity: 35,
+  },
+  {
+    id: 63,
+    name: 'Stout dos Pampas',
+    type: BeerTypes.STOUT,
+    description:
+      'Stout com café dos campos sulinos e chocolate artesanal gaúcho.',
+    imgPath: 'https://picsum.photos/seed/stout13/300/200',
+    abv: 6.4,
+    ibu: 33,
+    price: 17.9,
+    quantity: 28,
+  },
+  {
+    id: 64,
+    name: 'Weiss do Vale',
+    type: BeerTypes.WEISS,
+    description:
+      'Weiss com trigo do Vale do Itajaí e especiarias locais, suave e aromática.',
+    imgPath: 'https://picsum.photos/seed/weiss13/300/200',
+    abv: 5.0,
+    ibu: 13,
+    price: 15.9,
+    quantity: 42,
+  },
+  {
+    id: 65,
+    name: 'Lager das Montanhas',
+    type: BeerTypes.LAGER,
+    description:
+      'Lager produzida em altitude, com maltes serranos e água de nascente.',
+    imgPath: 'https://picsum.photos/seed/lager13/300/200',
+    abv: 4.9,
+    ibu: 20,
+    price: 14.9,
+    quantity: 46,
+  },
+];
+
+export const BEER_LIST_ELEVEN: Beer[] = [
+  {
+    id: 66,
+    name: 'Pilsen do Agreste',
+    type: BeerTypes.PILSNER,
+    description:
+      'Pilsen com mandioca do agreste nordestino, sabor autêntico e regional.',
+    imgPath: 'https://picsum.photos/seed/pilsner14/300/200',
+    abv: 4.8,
+    ibu: 24,
+    price: 13.9,
+    quantity: 40,
+  },
+  {
+    id: 67,
+    name: 'IPA do Mangue',
+    type: BeerTypes.IPA,
+    description:
+      'IPA com toques de frutas típicas do mangue pernambucano, única e marcante.',
+    imgPath: 'https://picsum.photos/seed/ipa14/300/200',
+    abv: 6.5,
+    ibu: 60,
+    price: 19.9,
+    quantity: 32,
+  },
+  {
+    id: 68,
+    name: 'Stout do Araguaia',
+    type: BeerTypes.STOUT,
+    description:
+      'Stout com café do cerrado e castanhas do Araguaia, encorpada e terrosa.',
+    imgPath: 'https://picsum.photos/seed/stout14/300/200',
+    abv: 6.6,
+    ibu: 35,
+    price: 18.9,
+    quantity: 26,
+  },
+  {
+    id: 69,
+    name: 'Weiss das Missões',
+    type: BeerTypes.WEISS,
+    description:
+      'Weiss com trigo das antigas missões e erva-mate, tradicional com toque regional.',
+    imgPath: 'https://picsum.photos/seed/weiss14/300/200',
+    abv: 5.2,
+    ibu: 14,
+    price: 16.9,
+    quantity: 38,
+  },
+  {
+    id: 70,
+    name: 'Lager da Fronteira',
+    type: BeerTypes.LAGER,
+    description:
+      'Lager com maltes da fronteira sul, influência gaúcha e uruguaia.',
+    imgPath: 'https://picsum.photos/seed/lager14/300/200',
+    abv: 4.8,
+    ibu: 19,
+    price: 14.9,
+    quantity: 44,
+  },
+];
+
+export const BEER_LIST_TWELVE: Beer[] = [
+  {
+    id: 71,
+    name: 'Pilsen da Chapada',
+    type: BeerTypes.PILSNER,
+    description:
+      'Pilsen com água da Chapada Diamantina, pura e cristalina como os diamantes.',
+    imgPath: 'https://picsum.photos/seed/pilsner15/300/200',
+    abv: 4.7,
+    ibu: 23,
+    price: 14.9,
+    quantity: 42,
+  },
+  {
+    id: 72,
+    name: 'IPA das Gerais',
+    type: BeerTypes.IPA,
+    description:
+      'IPA com ervas aromáticas das Gerais, complexidade única das montanhas mineiras.',
+    imgPath: 'https://picsum.photos/seed/ipa15/300/200',
+    abv: 6.4,
+    ibu: 58,
+    price: 18.9,
+    quantity: 34,
+  },
+  {
+    id: 73,
+    name: 'Stout da Serra do Mar',
+    type: BeerTypes.STOUT,
+    description:
+      'Stout com café da Serra do Mar e chocolate artesanal paulista, intensa e marcante.',
+    imgPath: 'https://picsum.photos/seed/stout15/300/200',
+    abv: 6.5,
+    ibu: 36,
+    price: 17.9,
+    quantity: 28,
+  },
+  {
+    id: 74,
+    name: 'Weiss do Cerrado',
+    type: BeerTypes.WEISS,
+    description:
+      'Weiss com trigo do cerrado e mel de flores nativas, aroma único do Brasil central.',
+    imgPath: 'https://picsum.photos/seed/weiss15/300/200',
+    abv: 5.1,
+    ibu: 13,
+    price: 15.9,
+    quantity: 40,
+  },
+  {
+    id: 75,
+    name: 'Lager dos Canyons',
+    type: BeerTypes.LAGER,
+    description:
+      'Lager dos canyons do sul, com água mineral pura e maltes especiais.',
+    imgPath: 'https://picsum.photos/seed/lager15/300/200',
+    abv: 4.9,
+    ibu: 20,
+    price: 14.9,
+    quantity: 45,
   },
 ];

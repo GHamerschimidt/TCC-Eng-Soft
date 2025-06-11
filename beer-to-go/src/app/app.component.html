@@ -1,6 +1,15 @@
+<p-toast></p-toast>
 <div class="header-menu">
-  <div class="company-name">Beer to Go</div>
-  <p-button (onClick)="isCartVisible.set(true)"></p-button>
+  <a routerLink="/" class="logo-link">
+    <img src="/assets/icons/logo.svg" alt="Beer to Go" class="logo" />
+  </a>
+  <app-search-bar (search)="onSearch($event)"></app-search-bar>
+  <p-button
+    icon="pi pi-shopping-cart"
+    styleClass="p-button-rounded"
+    [style]="{ 'margin-left': '136px' }"
+    (onClick)="isCartVisible.set(true)"
+  ></p-button>
 </div>
 <div class="root">
   <div class="global-margin">

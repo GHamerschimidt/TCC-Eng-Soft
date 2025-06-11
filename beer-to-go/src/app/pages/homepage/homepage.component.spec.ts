@@ -57,7 +57,7 @@ describe('HomepageComponent', () => {
 
     it('should load breweries on init', () => {
       expect(breweryService.getAllBreweries$).toHaveBeenCalled();
-      component.breweries$.subscribe((breweries) => {
+      component.highlightedBreweries$.subscribe((breweries) => {
         expect(breweries).toEqual(mockBreweries);
       });
     });
@@ -80,7 +80,7 @@ describe('HomepageComponent', () => {
       fixture = TestBed.createComponent(HomepageComponent);
       component = fixture.componentInstance;
 
-      component.breweries$.subscribe((breweries) => {
+      component.highlightedBreweries$.subscribe((breweries) => {
         expect(breweries).toEqual([]);
       });
     });

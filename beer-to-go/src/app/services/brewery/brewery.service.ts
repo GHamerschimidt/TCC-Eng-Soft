@@ -1,15 +1,29 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Brewery } from '../../interfaces/brewery.interface';
 import { BREWERIES } from '../../mock-data/mock-data-brewery';
-import { BeerService } from '../beer/beer.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BreweryService {
-  getAllBreweries$(): Observable<Brewery[]> {
-    return of(BREWERIES);
+  getBreweries$(
+    startIndex: number,
+    endIndex: number,
+    searchTerm?: string
+  ): Observable<Brewery[]> {
+    if (!searchTerm?.trim()) {
+      return of(BREWERIES.slice(startIndex, endIndex));
+    }
+
+    const normalizedTerm = searchTerm.toLowerCase().trim();
+    const filteredBreweries = BREWERIES.filter(
+      (brewery) =>
+        brewery.name.toLowerCase().includes(normalizedTerm) ||
+        brewery.description.toLowerCase().includes(normalizedTerm)
+    );
+
+    return of(filteredBreweries.slice(startIndex, endIndex));
   }
 
   getBreweryById$(id: number): Observable<Brewery | undefined> {

@@ -42,3 +42,32 @@
 .brewery-img {
   border-radius: 1rem;
 }
+
+.brewery-list {
+  margin-top: 3rem;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .brewery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .brewery-card {
+    flex: 1;
+    min-width: calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .brewery-card {
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+}

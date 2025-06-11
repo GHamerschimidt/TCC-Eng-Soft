@@ -30,9 +30,14 @@
   gap: 1rem;
   padding: 1rem 0;
   max-width: 68%;
+  padding-right: 1rem;
 }
 
 .card-img {
   width: 10rem;
   height: 10rem;
+}
+
+img {
+  border-radius: 5px;
 }

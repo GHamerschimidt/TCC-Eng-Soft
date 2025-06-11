@@ -1,23 +1,49 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CarouselModule } from 'primeng/carousel';
 import { Brewery } from '../../interfaces/brewery.interface';
 import { BreweryService } from '../../services/brewery/brewery.service';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+import { CardComponent } from '../../components/card/card.component';
+import { LoadingSpinnerComponent } from '../../components/loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [CommonModule, CarouselModule],
+  imports: [
+    CommonModule,
+    CarouselModule,
+    CardComponent,
+    LoadingSpinnerComponent,
+  ],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss',
 })
-export class HomepageComponent {
+export class HomepageComponent implements OnInit {
   private router = inject(Router);
+  private route = inject(ActivatedRoute);
   private breweryService = inject(BreweryService);
 
-  breweries$: Observable<Brewery[]> = this.breweryService.getAllBreweries$();
+  private searchTermSubject = new BehaviorSubject<string>('');
+  hasSearch = signal(true);
+
+  highlightedBreweries$: Observable<Brewery[]> =
+    this.breweryService.getBreweries$(6, 12);
+
+  regularBreweries$ = this.route.queryParams.pipe(
+    map((params) => params['search'] || ''),
+    switchMap((searchTerm) => {
+      this.hasSearch.set(!searchTerm);
+      return this.breweryService.getBreweries$(0, 12, searchTerm);
+    })
+  );
+
+  ngOnInit(): void {
+    const searchTerm = this.route.snapshot.queryParams['search'] || '';
+    this.searchTermSubject.next(searchTerm);
+  }
 
   navigateToBrewery(id: number): void {
     this.router.navigate(['/brewery', id]);

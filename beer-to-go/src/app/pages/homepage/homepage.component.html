@@ -1,11 +1,11 @@
 <div class="homepage-container">
+  @if (hasSearch()) { @if (highlightedBreweries$ | async; as breweries) {
   <h1>Cervejarias em destaque</h1>
   <hr />
-  @if (breweries$ | async; as breweries) {
   <p-carousel
     [value]="breweries"
-    [numScroll]="2"
-    [numVisible]="2"
+    [numScroll]="3"
+    [numVisible]="3"
     [circular]="true"
     [showIndicators]="false"
   >
@@ -25,9 +25,34 @@
       </div>
     </ng-template>
   </p-carousel>
-  } @else {
-  <div class="loading">
-    <p>Carregando cervejarias...</p>
+  } }
+  <div class="brewery-list">
+    <h2>
+      {{ hasSearch() ? "Todas as Cervejarias" : "Cervejarias encontradas" }}
+    </h2>
+    <hr />
+    @if (regularBreweries$ | async; as breweries) { @if (breweries.length > 0 )
+    {
+    <div class="brewery-grid">
+      @for (brewery of breweries; track brewery.id) {
+      <div class="brewery-card">
+        <app-card
+          [name]="brewery.name"
+          [description]="brewery.description"
+          [imgPath]="brewery.imgPath"
+          (onClick)="navigateToBrewery(brewery.id)"
+        ></app-card>
+      </div>
+      }
+    </div>
+    } @else {
+    <div class="loading">
+      <p>Nenhum resultado encontrado</p>
+    </div>
+    } } @else {
+    <app-loading-spinner
+      message="Carregando cervejarias..."
+    ></app-loading-spinner>
+    }
   </div>
-  }
 </div>

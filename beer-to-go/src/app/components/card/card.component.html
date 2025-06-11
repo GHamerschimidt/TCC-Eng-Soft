@@ -6,7 +6,9 @@
   <img class="card-img" [src]="this.imgPath" [alt]="this.name" />
   <div class="card-info">
     <div class="card-details">
-      <a class="card-name">{{ this.name }}</a>
+      <strong
+        ><a class="card-name">{{ this.name }}</a></strong
+      >
       <a class="card-description">{{ this.description }}</a>
     </div>
     <ng-content></ng-content>
