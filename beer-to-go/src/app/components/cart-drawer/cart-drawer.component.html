@@ -2,39 +2,60 @@
   [(visible)]="visible"
   [header]="'Meu carrinho'"
   [position]="'right'"
-  styleClass="cart-drawer"
+  [style]="{ width: '30rem' }"
   (onHide)="this.onHide.emit()"
 >
   @if (cartDetails$ | async; as cartDetails) {
   <div class="cart-content">
-    <h3>{{ cartDetails.brewery.name }}</h3>
-    <div class="cart-items">
-      @for (item of cartDetails.cart.cartItems; track item.beer.id) {
-      <div class="cart-item">
-        <div class="item-details">
-          <h4 class="beer-name">{{ item.beer.name }}</h4>
-          <p class="beer-type">{{ item.beer.type }}</p>
-          <p class="item-price">
-            {{ item.beer.price * item.selectedQuantity | currency }}
-          </p>
+    <h3>{{ "Cervejaria " + cartDetails.brewery.name }}</h3>
+    <div class="cart-items-container">
+      <div class="cart-items">
+        @for (item of cartDetails.cart.cartItems; track item.beer.id) {
+        <div class="cart-item">
+          <div class="item-details">
+            <h4 class="beer-name">{{ item.beer.name }}</h4>
+            <p class="beer-type">{{ item.beer.type }}</p>
+            <p class="item-price">
+              {{ item.beer.price * item.selectedQuantity | currency }}
+            </p>
+          </div>
+          <div class="item-controls">
+            <app-counter
+              [(count)]="item.selectedQuantity"
+              [limit]="item.beer.quantity"
+              [minValue]="1"
+              (countChange)="onQuantityChange(item.beer.id, $event)"
+            ></app-counter>
+            <p-button
+              icon="pi pi-trash"
+              styleClass="p-button-rounded p-button-danger p-button-text"
+              (onClick)="removeItem(item.beer.id)"
+            ></p-button>
+          </div>
         </div>
-        <div class="item-controls">
-          <app-counter
-            [(count)]="item.selectedQuantity"
-            [limit]="item.beer.quantity"
-            [minValue]="1"
-            (countChange)="onQuantityChange(item.beer.id, $event)"
-          ></app-counter>
-          <button
-            pButton
-            type="button"
-            icon="pi pi-trash"
-            class="p-button-rounded p-button-danger p-button-text"
-            (click)="removeItem(item.beer.id)"
-          ></button>
-        </div>
+        }
       </div>
-      }
+    </div>
+    <div class="cart-footer">
+      <div class="total-section">
+        <h4>Total do pedido</h4>
+        <p class="total-amount">
+          {{ calculateTotal(cartDetails.cart.cartItems) | currency }}
+        </p>
+      </div>
+      <div class="address-section">
+        <h4>Endereço de entrega</h4>
+        <p class="delivery-address">
+          {{ userAddress$ | async }}
+        </p>
+      </div>
+    </div>
+    <div class="button-container">
+      <p-button
+        label="Finalizar Pedido"
+        styleClass="p-button-rounded"
+        (onClick)="finishOrder()"
+      ></p-button>
     </div>
   </div>
   } @else {

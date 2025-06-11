@@ -1,108 +1,76 @@
-import { Injectable, signal } from '@angular/core';
-import { Cart, CartItem } from '../../interfaces/cart-item.interface';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Beer } from '../../interfaces/beer.interface';
-import { BehaviorSubject, Observable } from 'rxjs';
 import { Brewery } from '../../interfaces/brewery.interface';
+import { Cart, CartItem } from '../../interfaces/cart-item.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ShoppingCartService {
   private readonly STORAGE_KEY = 'cart';
-  private readonly cartState = signal<Cart | null>(null);
-  private cartSubject = new BehaviorSubject<Cart | null>(null);
-  cartChanges$: Observable<Cart | null> = this.cartSubject.asObservable();
+  private readonly cartSubject = new BehaviorSubject<Cart | null>(
+    this.loadInitialCart()
+  );
 
-  constructor() {
-    this.initializeCart();
-  }
+  readonly cart$ = this.cartSubject.asObservable();
 
-  getCart(): Cart | null {
-    return this.cartState();
-  }
   addItem(beer: Beer, brewery: Pick<Brewery, 'id'>, quantity: number): void {
-    if (quantity <= 0) {
-      return;
-    }
+    if (quantity <= 0) return;
 
-    const currentCart = this.cartState();
-    const newItem = this.createCartItem(beer, quantity);
+    const currentCart = this.cartSubject.getValue();
+    const newItem: CartItem = { beer, selectedQuantity: quantity };
 
     if (!currentCart || currentCart.breweryId !== brewery.id) {
-      const newCart = this.createNewCart(brewery.id, newItem);
-      this.updateCartState(newCart);
+      this.updateCart(this.createNewCart(brewery.id, newItem));
       return;
     }
 
-    const updatedCart = {
-      ...currentCart,
-      cartItems: this.updateExistingCartItems(currentCart.cartItems, newItem),
-    };
-
-    this.updateCartState(updatedCart);
+    const updatedItems = this.mergeCartItems(currentCart.cartItems, newItem);
+    this.updateCart({ ...currentCart, cartItems: updatedItems });
   }
 
   removeItem(beerId: number): void {
-    const currentCart = this.cartState();
-    if (!currentCart) {
-      return;
-    }
+    const currentCart = this.cartSubject.getValue();
+    if (!currentCart) return;
 
-    const updatedCart = this.removeItemFromCart(currentCart, beerId);
-    this.updateCartState(updatedCart);
+    const updatedItems = currentCart.cartItems.filter(
+      (item) => item.beer.id !== beerId
+    );
+
+    updatedItems.length === 0
+      ? this.clearCart()
+      : this.updateCart({ ...currentCart, cartItems: updatedItems });
   }
 
   updateQuantity(beerId: number, quantity: number): void {
-    const currentCart = this.cartState();
-    if (!currentCart) {
-      return;
-    }
-
     if (quantity <= 0) {
       this.removeItem(beerId);
       return;
     }
 
-    const updatedCart = this.updateItemQuantity(currentCart, beerId, quantity);
-    this.updateCartState(updatedCart);
+    this.cart$
+      .pipe(
+        map((cart) => {
+          if (!cart) return null;
+
+          const updatedItems = cart.cartItems.map((item) =>
+            item.beer.id === beerId
+              ? { ...item, selectedQuantity: quantity }
+              : item
+          );
+
+          return { ...cart, cartItems: updatedItems };
+        })
+      )
+      .subscribe((updatedCart) => {
+        if (updatedCart) this.updateCart(updatedCart);
+      });
   }
 
   clearCart(): void {
-    this.updateCartState(null);
-  }
-
-  private initializeCart(): void {
-    const storedCart = this.retrieveCartFromStorage();
-    if (this.isValidStoredCart(storedCart)) {
-      this.cartState.set(storedCart);
-    }
-  }
-
-  private retrieveCartFromStorage(): Cart | null {
-    const storedData = localStorage.getItem(this.STORAGE_KEY);
-    if (!storedData) {
-      return null;
-    }
-    return JSON.parse(storedData);
-  }
-
-  private isValidStoredCart(cart: unknown): cart is Cart {
-    if (!cart || typeof cart !== 'object') return false;
-    return 'breweryId' in cart && 'cartItems' in cart;
-  }
-
-  private persistCart(cart: Cart | null): void {
-    if (!cart) {
-      localStorage.removeItem(this.STORAGE_KEY);
-      return;
-    }
-    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(cart));
-  }
-
-  private updateCartState(newCart: Cart | null): void {
-    this.cartState.set(newCart);
-    this.cartSubject.next(newCart);
-    this.persistCart(newCart);
+    this.updateCart(null);
   }
 
   private createNewCart(breweryId: number, item: CartItem): Cart {
@@ -112,56 +80,48 @@ export class ShoppingCartService {
     };
   }
 
-  private createCartItem(beer: Beer, quantity: number): CartItem {
-    return {
-      beer,
-      selectedQuantity: quantity,
-    };
-  }
-  private updateExistingCartItems(
-    items: CartItem[],
-    itemToUpdate: CartItem
+  private mergeCartItems(
+    existingItems: CartItem[],
+    newItem: CartItem
   ): CartItem[] {
-    const existingItem = items.find(
-      (item) => item.beer.id === itemToUpdate.beer.id
+    const existingItemIndex = existingItems.findIndex(
+      (item) => item.beer.id === newItem.beer.id
     );
 
-    if (!existingItem) {
-      return [...items, itemToUpdate];
+    if (existingItemIndex === -1) {
+      return [...existingItems, newItem];
     }
 
-    return items.map((item) =>
-      item.beer.id === itemToUpdate.beer.id
-        ? {
-            ...itemToUpdate,
-            selectedQuantity: itemToUpdate.selectedQuantity,
-          }
-        : item
+    return existingItems.map((item, index) =>
+      index === existingItemIndex ? newItem : item
     );
   }
 
-  private removeItemFromCart(currentCart: Cart, beerId: number): Cart | null {
-    const updatedItems = currentCart.cartItems.filter(
-      (item) => item.beer.id !== beerId
-    );
+  private loadInitialCart(): Cart | null {
+    const storedCart = localStorage.getItem(this.STORAGE_KEY);
+    if (!storedCart) return null;
 
-    if (updatedItems.length === 0) {
-      return null;
-    }
-
-    return { ...currentCart, cartItems: updatedItems };
+    const parsedCart = JSON.parse(storedCart);
+    return this.isValidCart(parsedCart) ? parsedCart : null;
   }
 
-  private updateItemQuantity(
-    currentCart: Cart,
-    beerId: number,
-    newQuantity: number
-  ): Cart {
-    const updatedItems = currentCart.cartItems.map((item) =>
-      item.beer.id === beerId
-        ? { ...item, selectedQuantity: newQuantity }
-        : item
+  private isValidCart(cart: unknown): cart is Cart {
+    return (
+      cart !== null &&
+      typeof cart === 'object' &&
+      'breweryId' in cart &&
+      'cartItems' in cart
     );
-    return { ...currentCart, cartItems: updatedItems };
+  }
+
+  private persistCart(cart: Cart | null): void {
+    cart
+      ? localStorage.setItem(this.STORAGE_KEY, JSON.stringify(cart))
+      : localStorage.removeItem(this.STORAGE_KEY);
+  }
+
+  private updateCart(cart: Cart | null): void {
+    this.persistCart(cart);
+    this.cartSubject.next(cart);
   }
 }

@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CartDrawerComponent } from './components/cart-drawer/cart-drawer.component';
 import { ButtonModule } from 'primeng/button';
+import { CartDrawerComponent } from './components/cart-drawer/cart-drawer.component';
 
 @Component({
   selector: 'app-root',
