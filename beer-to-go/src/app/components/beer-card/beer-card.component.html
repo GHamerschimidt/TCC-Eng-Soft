@@ -1,0 +1,18 @@
+<app-card
+  [name]="this.beer.name"
+  [imgPath]="this.beer.imgPath"
+  [description]="this.beer.description"
+>
+  <ng-content>
+    <div class="card-specification">
+      <div class="beer-specification">
+        <a>ABV: {{ this.beer.abv | number : "1.1" }}</a>
+        <a>IBU: {{ this.beer.ibu }}</a>
+        <a>Max: {{ this.beer.quantity }}</a>
+      </div>
+      <div class="price">
+        <a>{{ this.beer.price | currency : "BRL" }}</a>
+      </div>
+    </div></ng-content
+  >
+</app-card>
