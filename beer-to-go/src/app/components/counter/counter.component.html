@@ -1,4 +1,4 @@
-<div class="counter-container">
+<div class="counter-container" [class.shake]="isShaking">
   <p-button
     icon="pi pi-minus"
     (onClick)="decrease()"

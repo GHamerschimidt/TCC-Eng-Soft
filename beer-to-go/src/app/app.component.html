@@ -1,9 +1,14 @@
 <div class="header-menu">
   <div class="company-name">Beer to Go</div>
-  <div class="shopping-cart">Carrinho de compras</div>
+  <p-button (onClick)="isCartVisible.set(true)"></p-button>
 </div>
 <div class="root">
   <div class="global-margin">
     <router-outlet></router-outlet>
   </div>
 </div>
+
+<app-cart-drawer
+  [visible]="isCartVisible()"
+  (onHide)="isCartVisible.set(false)"
+></app-cart-drawer>

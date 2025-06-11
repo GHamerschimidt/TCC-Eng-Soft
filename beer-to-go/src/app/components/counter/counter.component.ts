@@ -11,28 +11,34 @@ import { CommonModule } from '@angular/common';
 })
 export class CounterComponent {
   @Input() limit?: number;
+  @Input() minValue: number = 0;
   count = model<number>(0);
+  isShaking = false;
 
   increase(): void {
-    this.updateCount(1);
+    const newValue = this.count() + 1;
+    if (this.limit && newValue > this.limit) {
+      this.shake();
+      return;
+    }
+    this.count.set(newValue);
   }
 
   decrease(): void {
-    this.updateCount(-1);
+    const newValue = this.count() - 1;
+    if (newValue < this.minValue) {
+      this.shake();
+      return;
+    }
+    this.count.set(newValue);
   }
 
-  private updateCount(amount: number): void {
-    const newValue = this.count() + amount;
+  private shake(): void {
+    if (this.isShaking) return;
 
-    if (newValue < 0) {
-      this.count.set(0);
-      return;
-    }
-
-    if (this.limit && newValue > this.limit) {
-      return;
-    }
-
-    this.count.set(newValue);
+    this.isShaking = true;
+    setTimeout(() => {
+      this.isShaking = false;
+    }, 300);
   }
 }

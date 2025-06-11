@@ -1,0 +1,46 @@
+<p-drawer
+  [(visible)]="visible"
+  [header]="'Meu carrinho'"
+  [position]="'right'"
+  styleClass="cart-drawer"
+  (onHide)="this.onHide.emit()"
+>
+  @if (cartDetails$ | async; as cartDetails) {
+  <div class="cart-content">
+    <h3>{{ cartDetails.brewery.name }}</h3>
+    <div class="cart-items">
+      @for (item of cartDetails.cart.cartItems; track item.beer.id) {
+      <div class="cart-item">
+        <div class="item-details">
+          <h4 class="beer-name">{{ item.beer.name }}</h4>
+          <p class="beer-type">{{ item.beer.type }}</p>
+          <p class="item-price">
+            {{ item.beer.price * item.selectedQuantity | currency }}
+          </p>
+        </div>
+        <div class="item-controls">
+          <app-counter
+            [(count)]="item.selectedQuantity"
+            [limit]="item.beer.quantity"
+            [minValue]="1"
+            (countChange)="updateQuantity(item.beer.id, $event)"
+          ></app-counter>
+          <button
+            pButton
+            type="button"
+            icon="pi pi-trash"
+            class="p-button-rounded p-button-danger p-button-text"
+            (click)="removeItem(item.beer.id)"
+          ></button>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  } @else {
+  <div class="empty-cart-message">
+    <p>Seu carrinho está vazio</p>
+    <p>Adicione alguns produtos para começar suas compras!</p>
+  </div>
+  }
+</p-drawer>

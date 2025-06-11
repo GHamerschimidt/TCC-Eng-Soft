@@ -1,6 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { Cart, CartItem } from '../../interfaces/cart-item.interface';
 import { Beer } from '../../interfaces/beer.interface';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +9,8 @@ import { Beer } from '../../interfaces/beer.interface';
 export class ShoppingCartService {
   private readonly STORAGE_KEY = 'cart';
   private readonly cartState = signal<Cart | null>(null);
+  private cartSubject = new BehaviorSubject<Cart | null>(null);
+  cartChanges$: Observable<Cart | null> = this.cartSubject.asObservable();
 
   constructor() {
     this.initializeCart();
@@ -98,6 +101,7 @@ export class ShoppingCartService {
 
   private updateCartState(newCart: Cart | null): void {
     this.cartState.set(newCart);
+    this.cartSubject.next(newCart);
     this.persistCart(newCart);
   }
 
