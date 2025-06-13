@@ -2,6 +2,7 @@ import { BeerTypes } from '../enum/beer-types.enum';
 
 export interface Beer {
   id: number;
+  breweryId: number;
   name: string;
   type: BeerTypes;
   description: string;

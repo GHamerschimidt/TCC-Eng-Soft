@@ -33,6 +33,13 @@
   padding-right: 1rem;
 }
 
+.card-owner {
+  color: var(--p-primary-800);
+  font-weight: 700;
+  padding-bottom: 0.25rem;
+  border-bottom: 0.125rem solid var(--p-slate-400);
+}
+
 .card-img {
   width: 10rem;
   height: 10rem;

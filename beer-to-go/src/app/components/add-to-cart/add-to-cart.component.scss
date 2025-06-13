@@ -19,3 +19,13 @@
 ::ng-deep .add-button .p-button {
   width: 200px;
 }
+
+::ng-deep .go-to-brewery-button .p-button {
+  width: max-content;
+}
+
+.detailed-footer-disposition {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}

@@ -10,6 +10,7 @@ import { CardVariant } from './type/card.variant';
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
+  @Input() onwerName?: string;
   @Input() name: string = 'name';
   @Input() variant: CardVariant = CardVariant.CardButton;
   @Input() imgPath: string = 'https://picsum.photos/seed/picsum111/300/200';
@@ -18,5 +19,9 @@ export class CardComponent {
 
   isCardButtonVariant(): boolean {
     return this.variant === CardVariant.CardButton;
+  }
+
+  isDetailedCardButtonVariant(): boolean {
+    return this.variant === CardVariant.DetailedCardButton;
   }
 }

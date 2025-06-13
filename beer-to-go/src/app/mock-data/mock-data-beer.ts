@@ -1,9 +1,10 @@
 import { BeerTypes } from '../enum/beer-types.enum';
 import { Beer } from '../interfaces/beer.interface';
 
-export const BEER_LIST_ONE: Beer[] = [
+export const getBeerListOne = (breweryId: number): Beer[] => [
   {
     id: 1,
+    breweryId,
     name: 'Münchner Gold',
     type: BeerTypes.PILSNER,
     description:
@@ -16,6 +17,7 @@ export const BEER_LIST_ONE: Beer[] = [
   },
   {
     id: 2,
+    breweryId,
     name: 'Pilsner da Serra',
     type: BeerTypes.PILSNER,
     description:
@@ -28,6 +30,7 @@ export const BEER_LIST_ONE: Beer[] = [
   },
   {
     id: 3,
+    breweryId,
     name: 'Hop Monster IPA',
     type: BeerTypes.IPA,
     description:
@@ -40,6 +43,7 @@ export const BEER_LIST_ONE: Beer[] = [
   },
   {
     id: 4,
+    breweryId,
     name: 'Carioca IPA',
     type: BeerTypes.IPA,
     description:
@@ -52,6 +56,7 @@ export const BEER_LIST_ONE: Beer[] = [
   },
   {
     id: 5,
+    breweryId,
     name: 'Schwarzbier Nights',
     type: BeerTypes.STOUT,
     description:
@@ -64,6 +69,7 @@ export const BEER_LIST_ONE: Beer[] = [
   },
   {
     id: 6,
+    breweryId,
     name: 'Café com Leite Stout',
     type: BeerTypes.STOUT,
     description:
@@ -76,6 +82,7 @@ export const BEER_LIST_ONE: Beer[] = [
   },
   {
     id: 7,
+    breweryId,
     name: 'Weißbier Traditional',
     type: BeerTypes.WEISS,
     description:
@@ -88,6 +95,7 @@ export const BEER_LIST_ONE: Beer[] = [
   },
   {
     id: 8,
+    breweryId,
     name: 'Trigo da Fazenda',
     type: BeerTypes.WEISS,
     description:
@@ -100,6 +108,7 @@ export const BEER_LIST_ONE: Beer[] = [
   },
   {
     id: 9,
+    breweryId,
     name: 'Kellerbier Original',
     type: BeerTypes.LAGER,
     description:
@@ -112,6 +121,7 @@ export const BEER_LIST_ONE: Beer[] = [
   },
   {
     id: 10,
+    breweryId,
     name: 'Lager da Praia',
     type: BeerTypes.LAGER,
     description:
@@ -124,9 +134,10 @@ export const BEER_LIST_ONE: Beer[] = [
   },
 ];
 
-export const BEER_LIST_TWO: Beer[] = [
+export const getBeerListTwo = (breweryId: number): Beer[] => [
   {
     id: 11,
+    breweryId,
     name: 'Bohemian Pilsner',
     type: BeerTypes.PILSNER,
     description:
@@ -139,6 +150,7 @@ export const BEER_LIST_TWO: Beer[] = [
   },
   {
     id: 12,
+    breweryId,
     name: 'Alpine Pilsner',
     type: BeerTypes.PILSNER,
     description:
@@ -151,6 +163,7 @@ export const BEER_LIST_TWO: Beer[] = [
   },
   {
     id: 13,
+    breweryId,
     name: 'West Coast IPA',
     type: BeerTypes.IPA,
     description:
@@ -163,6 +176,7 @@ export const BEER_LIST_TWO: Beer[] = [
   },
   {
     id: 14,
+    breweryId,
     name: 'Hazy Tropical IPA',
     type: BeerTypes.IPA,
     description: 'New England IPA nebulosa com manga, maracujá e abacaxi.',
@@ -174,6 +188,7 @@ export const BEER_LIST_TWO: Beer[] = [
   },
   {
     id: 15,
+    breweryId,
     name: 'Imperial Stout',
     type: BeerTypes.STOUT,
     description: 'Stout imperial potente com notas de cacau, café e baunilha.',
@@ -185,6 +200,7 @@ export const BEER_LIST_TWO: Beer[] = [
   },
   {
     id: 16,
+    breweryId,
     name: 'Oatmeal Stout',
     type: BeerTypes.STOUT,
     description:
@@ -197,6 +213,7 @@ export const BEER_LIST_TWO: Beer[] = [
   },
   {
     id: 17,
+    breweryId,
     name: 'Bavarian Weiss',
     type: BeerTypes.WEISS,
     description:
@@ -209,6 +226,7 @@ export const BEER_LIST_TWO: Beer[] = [
   },
   {
     id: 18,
+    breweryId,
     name: 'Summer Weiss',
     type: BeerTypes.WEISS,
     description: 'Cerveja de trigo leve e cítrica, perfeita para o verão.',
@@ -220,6 +238,7 @@ export const BEER_LIST_TWO: Beer[] = [
   },
   {
     id: 19,
+    breweryId,
     name: 'Vienna Lager',
     type: BeerTypes.LAGER,
     description:
@@ -232,6 +251,7 @@ export const BEER_LIST_TWO: Beer[] = [
   },
   {
     id: 20,
+    breweryId,
     name: 'Helles Lager',
     type: BeerTypes.LAGER,
     description: 'Lager alemã dourada e límpida com maltes premium.',
@@ -243,9 +263,10 @@ export const BEER_LIST_TWO: Beer[] = [
   },
 ];
 
-export const BEER_LIST_THREE: Beer[] = [
+export const getBeerListThree = (breweryId: number): Beer[] => [
   {
     id: 21,
+    breweryId,
     name: 'Noble Pilsner',
     type: BeerTypes.PILSNER,
     description:
@@ -258,6 +279,7 @@ export const BEER_LIST_THREE: Beer[] = [
   },
   {
     id: 22,
+    breweryId,
     name: 'Crystal Pilsner',
     type: BeerTypes.PILSNER,
     description:
@@ -270,6 +292,7 @@ export const BEER_LIST_THREE: Beer[] = [
   },
   {
     id: 23,
+    breweryId,
     name: 'Double IPA',
     type: BeerTypes.IPA,
     description:
@@ -282,6 +305,7 @@ export const BEER_LIST_THREE: Beer[] = [
   },
   {
     id: 24,
+    breweryId,
     name: 'Session IPA',
     type: BeerTypes.IPA,
     description: 'IPA leve e sessionável com notas cítricas e final limpo.',
@@ -293,6 +317,7 @@ export const BEER_LIST_THREE: Beer[] = [
   },
   {
     id: 25,
+    breweryId,
     name: 'Chocolate Stout',
     type: BeerTypes.STOUT,
     description:
@@ -305,6 +330,7 @@ export const BEER_LIST_THREE: Beer[] = [
   },
   {
     id: 26,
+    breweryId,
     name: 'Coconut Stout',
     type: BeerTypes.STOUT,
     description: 'Stout tropical com coco torrado e baunilha natural.',
@@ -316,6 +342,7 @@ export const BEER_LIST_THREE: Beer[] = [
   },
   {
     id: 27,
+    breweryId,
     name: 'Dunkel Weiss',
     type: BeerTypes.WEISS,
     description:
@@ -328,6 +355,7 @@ export const BEER_LIST_THREE: Beer[] = [
   },
   {
     id: 28,
+    breweryId,
     name: 'Honey Weiss',
     type: BeerTypes.WEISS,
     description: 'Cerveja de trigo com mel silvestre, suave e aromática.',
@@ -339,6 +367,7 @@ export const BEER_LIST_THREE: Beer[] = [
   },
   {
     id: 29,
+    breweryId,
     name: 'Czech Lager',
     type: BeerTypes.LAGER,
     description: 'Lager tcheca tradicional com malte Moravia e lúpulo Saaz.',
@@ -350,6 +379,7 @@ export const BEER_LIST_THREE: Beer[] = [
   },
   {
     id: 30,
+    breweryId,
     name: 'Dark Lager',
     type: BeerTypes.LAGER,
     description: 'Lager escura com notas de caramelo e torrado suave.',
@@ -361,9 +391,10 @@ export const BEER_LIST_THREE: Beer[] = [
   },
 ];
 
-export const BEER_LIST_FOUR: Beer[] = [
+export const getBeerListFour = (breweryId: number): Beer[] => [
   {
     id: 31,
+    breweryId,
     name: 'Pilsen do Sertão',
     type: BeerTypes.PILSNER,
     description:
@@ -376,6 +407,7 @@ export const BEER_LIST_FOUR: Beer[] = [
   },
   {
     id: 32,
+    breweryId,
     name: 'IPA Amazônica',
     type: BeerTypes.IPA,
     description:
@@ -388,6 +420,7 @@ export const BEER_LIST_FOUR: Beer[] = [
   },
   {
     id: 33,
+    breweryId,
     name: 'Stout Café Mineiro',
     type: BeerTypes.STOUT,
     description:
@@ -400,6 +433,7 @@ export const BEER_LIST_FOUR: Beer[] = [
   },
   {
     id: 34,
+    breweryId,
     name: 'Weiss Tropical',
     type: BeerTypes.WEISS,
     description:
@@ -412,6 +446,7 @@ export const BEER_LIST_FOUR: Beer[] = [
   },
   {
     id: 35,
+    breweryId,
     name: 'Lager da Mata',
     type: BeerTypes.LAGER,
     description:
@@ -424,9 +459,10 @@ export const BEER_LIST_FOUR: Beer[] = [
   },
 ];
 
-export const BEER_LIST_FIVE: Beer[] = [
+export const getBeerListFive = (breweryId: number): Beer[] => [
   {
     id: 36,
+    breweryId,
     name: 'Pilsen Pantaneira',
     type: BeerTypes.PILSNER,
     description:
@@ -439,6 +475,7 @@ export const BEER_LIST_FIVE: Beer[] = [
   },
   {
     id: 37,
+    breweryId,
     name: 'IPA Catarinense',
     type: BeerTypes.IPA,
     description:
@@ -451,6 +488,7 @@ export const BEER_LIST_FIVE: Beer[] = [
   },
   {
     id: 38,
+    breweryId,
     name: 'Stout Capixaba',
     type: BeerTypes.STOUT,
     description:
@@ -463,6 +501,7 @@ export const BEER_LIST_FIVE: Beer[] = [
   },
   {
     id: 39,
+    breweryId,
     name: 'Weiss Nordestina',
     type: BeerTypes.WEISS,
     description:
@@ -475,6 +514,7 @@ export const BEER_LIST_FIVE: Beer[] = [
   },
   {
     id: 40,
+    breweryId,
     name: 'Lager Gaúcha',
     type: BeerTypes.LAGER,
     description:
@@ -487,9 +527,10 @@ export const BEER_LIST_FIVE: Beer[] = [
   },
 ];
 
-export const BEER_LIST_SIX: Beer[] = [
+export const getBeerListSix = (breweryId: number): Beer[] => [
   {
     id: 41,
+    breweryId,
     name: 'Pilsen Carioca',
     type: BeerTypes.PILSNER,
     description:
@@ -502,6 +543,7 @@ export const BEER_LIST_SIX: Beer[] = [
   },
   {
     id: 42,
+    breweryId,
     name: 'IPA do Cerrado',
     type: BeerTypes.IPA,
     description:
@@ -514,6 +556,7 @@ export const BEER_LIST_SIX: Beer[] = [
   },
   {
     id: 43,
+    breweryId,
     name: 'Stout Paraense',
     type: BeerTypes.STOUT,
     description:
@@ -526,6 +569,7 @@ export const BEER_LIST_SIX: Beer[] = [
   },
   {
     id: 44,
+    breweryId,
     name: 'Weiss Praiana',
     type: BeerTypes.WEISS,
     description:
@@ -538,6 +582,7 @@ export const BEER_LIST_SIX: Beer[] = [
   },
   {
     id: 45,
+    breweryId,
     name: 'Lager Mineira',
     type: BeerTypes.LAGER,
     description:
@@ -550,9 +595,10 @@ export const BEER_LIST_SIX: Beer[] = [
   },
 ];
 
-export const BEER_LIST_SEVEN: Beer[] = [
+export const getBeerListSeven = (breweryId: number): Beer[] => [
   {
     id: 46,
+    breweryId,
     name: 'Pilsen Paulista',
     type: BeerTypes.PILSNER,
     description:
@@ -565,6 +611,7 @@ export const BEER_LIST_SEVEN: Beer[] = [
   },
   {
     id: 47,
+    breweryId,
     name: 'IPA Litorânea',
     type: BeerTypes.IPA,
     description:
@@ -577,6 +624,7 @@ export const BEER_LIST_SEVEN: Beer[] = [
   },
   {
     id: 48,
+    breweryId,
     name: 'Stout Goiana',
     type: BeerTypes.STOUT,
     description:
@@ -589,6 +637,7 @@ export const BEER_LIST_SEVEN: Beer[] = [
   },
   {
     id: 49,
+    breweryId,
     name: 'Weiss da Serra',
     type: BeerTypes.WEISS,
     description:
@@ -601,6 +650,7 @@ export const BEER_LIST_SEVEN: Beer[] = [
   },
   {
     id: 50,
+    breweryId,
     name: 'Lager Brasiliense',
     type: BeerTypes.LAGER,
     description:
@@ -613,9 +663,10 @@ export const BEER_LIST_SEVEN: Beer[] = [
   },
 ];
 
-export const BEER_LIST_EIGHT: Beer[] = [
+export const getBeerListEight = (breweryId: number): Beer[] => [
   {
     id: 51,
+    breweryId,
     name: 'Pilsen do Vale',
     type: BeerTypes.PILSNER,
     description:
@@ -628,6 +679,7 @@ export const BEER_LIST_EIGHT: Beer[] = [
   },
   {
     id: 52,
+    breweryId,
     name: 'IPA da Mantiqueira',
     type: BeerTypes.IPA,
     description:
@@ -640,6 +692,7 @@ export const BEER_LIST_EIGHT: Beer[] = [
   },
   {
     id: 53,
+    breweryId,
     name: 'Stout da Serra',
     type: BeerTypes.STOUT,
     description:
@@ -652,6 +705,7 @@ export const BEER_LIST_EIGHT: Beer[] = [
   },
   {
     id: 54,
+    breweryId,
     name: 'Weiss do Campo',
     type: BeerTypes.WEISS,
     description:
@@ -664,6 +718,7 @@ export const BEER_LIST_EIGHT: Beer[] = [
   },
   {
     id: 55,
+    breweryId,
     name: 'Lager Fluminense',
     type: BeerTypes.LAGER,
     description:
@@ -676,9 +731,10 @@ export const BEER_LIST_EIGHT: Beer[] = [
   },
 ];
 
-export const BEER_LIST_NINE: Beer[] = [
+export const getBeerListNine = (breweryId: number): Beer[] => [
   {
     id: 56,
+    breweryId,
     name: 'Pilsen da Floresta',
     type: BeerTypes.PILSNER,
     description:
@@ -691,6 +747,7 @@ export const BEER_LIST_NINE: Beer[] = [
   },
   {
     id: 57,
+    breweryId,
     name: 'IPA do Forte',
     type: BeerTypes.IPA,
     description:
@@ -703,6 +760,7 @@ export const BEER_LIST_NINE: Beer[] = [
   },
   {
     id: 58,
+    breweryId,
     name: 'Stout do Porto',
     type: BeerTypes.STOUT,
     description:
@@ -715,6 +773,7 @@ export const BEER_LIST_NINE: Beer[] = [
   },
   {
     id: 59,
+    breweryId,
     name: 'Weiss da Colônia',
     type: BeerTypes.WEISS,
     description:
@@ -727,6 +786,7 @@ export const BEER_LIST_NINE: Beer[] = [
   },
   {
     id: 60,
+    breweryId,
     name: 'Lager do Litoral',
     type: BeerTypes.LAGER,
     description:
@@ -739,9 +799,10 @@ export const BEER_LIST_NINE: Beer[] = [
   },
 ];
 
-export const BEER_LIST_TEN: Beer[] = [
+export const getBeerListTen = (breweryId: number): Beer[] => [
   {
     id: 61,
+    breweryId,
     name: 'Pilsen das Águas',
     type: BeerTypes.PILSNER,
     description:
@@ -754,6 +815,7 @@ export const BEER_LIST_TEN: Beer[] = [
   },
   {
     id: 62,
+    breweryId,
     name: 'IPA das Dunas',
     type: BeerTypes.IPA,
     description:
@@ -766,6 +828,7 @@ export const BEER_LIST_TEN: Beer[] = [
   },
   {
     id: 63,
+    breweryId,
     name: 'Stout dos Pampas',
     type: BeerTypes.STOUT,
     description:
@@ -778,6 +841,7 @@ export const BEER_LIST_TEN: Beer[] = [
   },
   {
     id: 64,
+    breweryId,
     name: 'Weiss do Vale',
     type: BeerTypes.WEISS,
     description:
@@ -790,6 +854,7 @@ export const BEER_LIST_TEN: Beer[] = [
   },
   {
     id: 65,
+    breweryId,
     name: 'Lager das Montanhas',
     type: BeerTypes.LAGER,
     description:
@@ -802,9 +867,10 @@ export const BEER_LIST_TEN: Beer[] = [
   },
 ];
 
-export const BEER_LIST_ELEVEN: Beer[] = [
+export const getBeerListEleven = (breweryId: number): Beer[] => [
   {
     id: 66,
+    breweryId,
     name: 'Pilsen do Agreste',
     type: BeerTypes.PILSNER,
     description:
@@ -817,6 +883,7 @@ export const BEER_LIST_ELEVEN: Beer[] = [
   },
   {
     id: 67,
+    breweryId,
     name: 'IPA do Mangue',
     type: BeerTypes.IPA,
     description:
@@ -829,6 +896,7 @@ export const BEER_LIST_ELEVEN: Beer[] = [
   },
   {
     id: 68,
+    breweryId,
     name: 'Stout do Araguaia',
     type: BeerTypes.STOUT,
     description:
@@ -841,6 +909,7 @@ export const BEER_LIST_ELEVEN: Beer[] = [
   },
   {
     id: 69,
+    breweryId,
     name: 'Weiss das Missões',
     type: BeerTypes.WEISS,
     description:
@@ -853,6 +922,7 @@ export const BEER_LIST_ELEVEN: Beer[] = [
   },
   {
     id: 70,
+    breweryId,
     name: 'Lager da Fronteira',
     type: BeerTypes.LAGER,
     description:
@@ -865,9 +935,10 @@ export const BEER_LIST_ELEVEN: Beer[] = [
   },
 ];
 
-export const BEER_LIST_TWELVE: Beer[] = [
+export const getBeerListTwelve = (breweryId: number): Beer[] => [
   {
     id: 71,
+    breweryId,
     name: 'Pilsen da Chapada',
     type: BeerTypes.PILSNER,
     description:
@@ -880,6 +951,7 @@ export const BEER_LIST_TWELVE: Beer[] = [
   },
   {
     id: 72,
+    breweryId,
     name: 'IPA das Gerais',
     type: BeerTypes.IPA,
     description:
@@ -892,6 +964,7 @@ export const BEER_LIST_TWELVE: Beer[] = [
   },
   {
     id: 73,
+    breweryId,
     name: 'Stout da Serra do Mar',
     type: BeerTypes.STOUT,
     description:
@@ -904,6 +977,7 @@ export const BEER_LIST_TWELVE: Beer[] = [
   },
   {
     id: 74,
+    breweryId,
     name: 'Weiss do Cerrado',
     type: BeerTypes.WEISS,
     description:
@@ -916,6 +990,7 @@ export const BEER_LIST_TWELVE: Beer[] = [
   },
   {
     id: 75,
+    breweryId,
     name: 'Lager dos Canyons',
     type: BeerTypes.LAGER,
     description:

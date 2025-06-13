@@ -80,6 +80,7 @@ export class SearchBarComponent implements OnInit, OnDestroy {
     } else {
       this.selectedFilter.set(this.breweryFilterNode);
     }
+    this.searchTerm.set('');
     this.emitSearch();
   }
 
@@ -88,14 +89,12 @@ export class SearchBarComponent implements OnInit, OnDestroy {
       .pipe(
         filter(
           (event): event is NavigationEnd => event instanceof NavigationEnd
-        )
+        ),
+        filter((event) => event.url === '/' || event.url === '/home')
       )
-      .subscribe((event) => {
-        console.log(event.url);
-        if (event.url === '/' || event.url === '/home') {
-          this.searchTerm.set('');
-          this.selectedFilter.set(this.breweryFilterNode);
-        }
+      .subscribe(() => {
+        this.searchTerm.set('');
+        this.selectedFilter.set(this.breweryFilterNode);
       });
   }
 

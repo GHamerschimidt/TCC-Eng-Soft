@@ -5,6 +5,9 @@ import { ToastModule } from 'primeng/toast';
 import { CartDrawerComponent } from './components/cart-drawer/cart-drawer.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchEvent } from './interfaces/search-event.interface';
+import { BeerTypes } from './enum/beer-types.enum';
+import { SearchParams } from './interfaces/query-params.interface';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +30,7 @@ export class AppComponent implements OnInit {
   private readonly ROUTES = {
     HOME: '/',
     BREWERY: '/brewery',
+    BEERS: '/beers',
   } as const;
 
   ngOnInit(): void {
@@ -36,48 +40,53 @@ export class AppComponent implements OnInit {
   onSearch(event: SearchEvent): void {
     this.handleSearchNavigation(event);
   }
-
   private handleSearchNavigation(event: SearchEvent): void {
-    switch (event.type) {
-      case 'breweries':
-        this.handleBrewerySearch(event.term);
-        break;
+    if (event.type === 'breweries') {
+      this.handleBrewerySearch(event.term);
+      return;
+    }
+
+    if (event.type === 'beers') {
+      this.handleBeerSearch(event.term);
+      return;
+    }
+
+    if (Object.values(BeerTypes).includes(event.type as BeerTypes)) {
+      this.handleBeerSearch(event.term, event.type as BeerTypes);
+      return;
     }
   }
 
   private handleBrewerySearch(searchTerm: string): void {
     const isOnHomePage = this.isCurrentRoute(this.ROUTES.HOME);
     if (!isOnHomePage) {
-      this.navigateToHome();
+      void this.router.navigate([this.ROUTES.HOME]);
     }
 
-    this.updateSearchParams(searchTerm);
+    void this.router.navigate([this.ROUTES.HOME], {
+      queryParams: this.createSearchParams(searchTerm),
+    });
+  }
+
+  private handleBeerSearch(searchTerm: string, beerType?: BeerTypes): void {
+    void this.router.navigate([this.ROUTES.BEERS], {
+      queryParams: this.createSearchParams(searchTerm, beerType),
+    });
+  }
+
+  private createSearchParams(
+    searchTerm?: string,
+    beerType?: BeerTypes
+  ): SearchParams {
+    const searchParams: SearchParams = { search: searchTerm, type: beerType };
+    return _.omitBy(searchParams, _.isNull);
+  }
+
+  private resetQueryParams(): void {
+    void this.router.navigate([this.router.url.split('?')[0]]);
   }
 
   private isCurrentRoute(route: string): boolean {
     return this.router.url.startsWith(route);
-  }
-
-  private navigateToHome(): void {
-    void this.router.navigate([this.ROUTES.HOME]);
-  }
-
-  private resetQueryParams(): void {
-    this.updateSearchParams();
-  }
-
-  private updateSearchParams(term?: string): void {
-    const currentUrl = this.getCurrentBaseUrl();
-    const queryParams = this.buildSearchQueryParams(term);
-
-    void this.router.navigate([currentUrl], { queryParams });
-  }
-
-  private getCurrentBaseUrl(): string {
-    return this.router.url.split('?')[0];
-  }
-
-  private buildSearchQueryParams(term?: string): { search?: string } {
-    return term ? { search: term } : {};
   }
 }

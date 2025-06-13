@@ -7,6 +7,10 @@ import { BREWERIES } from '../../mock-data/mock-data-brewery';
   providedIn: 'root',
 })
 export class BreweryService {
+  getBreweryById(breweryId: number): Brewery | undefined {
+    return BREWERIES.find((brewery) => brewery.id === breweryId);
+  }
+
   getBreweries$(
     startIndex: number,
     endIndex: number,

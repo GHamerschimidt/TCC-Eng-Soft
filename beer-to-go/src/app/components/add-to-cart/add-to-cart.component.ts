@@ -3,6 +3,7 @@ import {
   Component,
   computed,
   EventEmitter,
+  inject,
   Input,
   OnChanges,
   Output,
@@ -16,6 +17,8 @@ import { ButtonModule } from 'primeng/button';
 import { BeerCardComponent } from '../beer-card/beer-card.component';
 import { CardVariant } from '../card/type/card.variant';
 import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
+import { Router } from '@angular/router';
+import { BreweryService } from '../../services/brewery/brewery.service';
 
 @Component({
   selector: 'app-add-to-cart',
@@ -33,7 +36,7 @@ import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.
 export class AddToCartComponent implements OnChanges {
   @Input({ required: false }) beer?: Beer;
   @Input({ required: true }) visible: boolean = false;
-  @Input({ required: true }) breweryId!: number;
+  @Input({ required: false }) detailed: boolean = false;
   @Output() onHide = new EventEmitter<void>();
 
   selectedNumberOfItems = signal(0);
@@ -41,14 +44,24 @@ export class AddToCartComponent implements OnChanges {
     () => this.selectedNumberOfItems() * (this.beer?.price ?? 0)
   );
 
+  brewery = computed(() =>
+    this.breweryService.getBreweryById(this.beer!.breweryId)
+  );
+
   readonly beerCardVariant = CardVariant.Borderless;
 
-  constructor(private readonly cartService: ShoppingCartService) {}
+  private readonly cartService = inject(ShoppingCartService);
+  private readonly router = inject(Router);
+  private readonly breweryService = inject(BreweryService);
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['beer']) {
       this.clearSelectedNumberOfItems();
     }
+  }
+
+  navigateToBrewery(): void {
+    this.router.navigate(['/brewery', this.beer!.breweryId]);
   }
 
   addToCart(): void {
@@ -58,7 +71,7 @@ export class AddToCartComponent implements OnChanges {
 
     this.cartService.addItem(
       this.beer,
-      { id: this.breweryId },
+      this.beer.breweryId,
       this.selectedNumberOfItems()
     );
     this.closeDialog();

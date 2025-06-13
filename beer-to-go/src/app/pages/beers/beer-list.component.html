@@ -1,0 +1,31 @@
+<div class="beer-catalog-container">
+  <div class="beer-catalog">
+    @if (groupedBeers$ | async; as groupedBeers) { @for (group of groupedBeers;
+    track group) {
+    <section>
+      <h3 class="type-title">{{ group.type }}</h3>
+      <hr />
+      <div class="beer-list">
+        @for (beer of group.beers; track beer) {
+        <app-beer-card
+          [beer]="beer"
+          [variant]="beerCardVariant"
+          class="beer-card"
+          (onClick)="showAddToCart(beer)"
+        >
+        </app-beer-card>
+        }
+      </div>
+    </section>
+    } } @else {
+    <app-loading-spinner message="Carregando cervejas..."></app-loading-spinner>
+    }
+  </div>
+
+  <app-add-to-cart
+    [visible]="isAddToCartVisible()"
+    [detailed]="true"
+    [beer]="currentSelectedBeer()"
+    (onHide)="closeAddToCart()"
+  ></app-add-to-cart>
+</div>

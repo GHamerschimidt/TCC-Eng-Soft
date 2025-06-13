@@ -1,11 +1,17 @@
 <div
   class="card"
-  [ngClass]="{ 'button-card': this.isCardButtonVariant() }"
+  [ngClass]="{
+    'button-card':
+      this.isCardButtonVariant() || this.isDetailedCardButtonVariant(),
+  }"
   (click)="this.onClick.emit()"
 >
   <img class="card-img" [src]="this.imgPath" [alt]="this.name" />
   <div class="card-info">
     <div class="card-details">
+      @if(isDetailedCardButtonVariant()) {
+      <a class="card-owner">{{ onwerName }}</a>
+      }
       <strong
         ><a class="card-name">{{ this.name }}</a></strong
       >

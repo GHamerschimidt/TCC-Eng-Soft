@@ -13,14 +13,27 @@
   }
 
   <ng-template #footer>
-    <div class="quantity-select">
-      <app-counter
-        [(count)]="selectedNumberOfItems"
-        [limit]="this.beer?.quantity"
-      ></app-counter>
-      <p-button class="add-button" (onClick)="addToCart()">{{
-        "Adicionar - " + (totalPrice() | currency)
-      }}</p-button>
+    <div
+      [class]="{
+        'detailed-footer-disposition': this.detailed
+      }"
+    >
+      @if (this.detailed) {<p-button
+        class="go-to-brewery-button"
+        severity="success"
+        (onClick)="navigateToBrewery()"
+        >{{ "Ir para Cervejaria " + brewery()?.name }}</p-button
+      >}
+
+      <div class="quantity-select">
+        <app-counter
+          [(count)]="selectedNumberOfItems"
+          [limit]="this.beer?.quantity"
+        ></app-counter>
+        <p-button class="add-button" (onClick)="addToCart()">{{
+          "Adicionar - " + (totalPrice() | currency)
+        }}</p-button>
+      </div>
     </div>
   </ng-template>
 </p-dialog>

@@ -17,22 +17,19 @@ import { AddToCartComponent } from '../../components/add-to-cart/add-to-cart.com
   templateUrl: './brewery.component.html',
   styleUrl: './brewery.component.scss',
 })
-export class BreweryComponent implements OnInit {
+export class BreweryComponent {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private breweryService = inject(BreweryService);
   private beerService = inject(BeerService);
 
-  brewery$!: Observable<Brewery>;
-  groupedBeers$!: Observable<BeerTypeGroup[]>;
+  brewery$: Observable<Brewery> = this.route.paramMap.pipe(
+    this.getBreweryFromRoute()
+  );
+  groupedBeers$: Observable<BeerTypeGroup[]> = this.getGroupedBeersByType();
 
   isAddToCartVisible: boolean = false;
   currentSelectedBeer?: Beer;
-
-  ngOnInit(): void {
-    this.brewery$ = this.route.paramMap.pipe(this.getBreweryFromRoute());
-    this.groupedBeers$ = this.getGroupedBeersByType();
-  }
 
   showAddToCart(beer: Beer): void {
     this.currentSelectedBeer = beer;

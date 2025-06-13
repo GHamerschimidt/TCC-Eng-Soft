@@ -38,7 +38,6 @@
 
 <app-add-to-cart
   [visible]="isAddToCartVisible"
-  [breweryId]="(brewery$ | async)!.id"
   [beer]="currentSelectedBeer"
   (onHide)="this.closeAddToCart()"
 ></app-add-to-cart>

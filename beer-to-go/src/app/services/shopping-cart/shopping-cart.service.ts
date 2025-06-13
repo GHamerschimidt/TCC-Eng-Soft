@@ -16,14 +16,14 @@ export class ShoppingCartService {
 
   readonly cart$ = this.cartSubject.asObservable();
 
-  addItem(beer: Beer, brewery: Pick<Brewery, 'id'>, quantity: number): void {
+  addItem(beer: Beer, breweryId: number, quantity: number): void {
     if (quantity <= 0) return;
 
     const currentCart = this.cartSubject.getValue();
     const newItem: CartItem = { beer, selectedQuantity: quantity };
 
-    if (!currentCart || currentCart.breweryId !== brewery.id) {
-      this.updateCart(this.createNewCart(brewery.id, newItem));
+    if (!currentCart || currentCart.breweryId !== breweryId) {
+      this.updateCart(this.createNewCart(breweryId, newItem));
       return;
     }
 
