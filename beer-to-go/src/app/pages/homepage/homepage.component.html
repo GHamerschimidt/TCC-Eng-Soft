@@ -39,6 +39,7 @@
         <app-card
           [name]="brewery.name"
           [description]="brewery.description"
+          [variant]="cardVariant"
           [imgPath]="brewery.imgPath"
           (onClick)="navigateToBrewery(brewery.id)"
         ></app-card>

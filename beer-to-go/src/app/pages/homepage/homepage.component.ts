@@ -8,6 +8,7 @@ import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { CardComponent } from '../../components/card/card.component';
 import { LoadingSpinnerComponent } from '../../components/loading-spinner/loading-spinner.component';
+import { CardVariant } from '../../components/card/type/card.variant';
 
 @Component({
   selector: 'app-homepage',
@@ -27,6 +28,8 @@ export class HomepageComponent implements OnInit {
   private breweryService = inject(BreweryService);
 
   private searchTermSubject = new BehaviorSubject<string>('');
+
+  cardVariant = CardVariant.SimpleCardButton;
   hasSearch = signal(true);
 
   highlightedBreweries$: Observable<Brewery[]> =

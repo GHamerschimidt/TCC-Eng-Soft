@@ -9,7 +9,7 @@ export const getBeerListOne = (breweryId: number): Beer[] => [
     type: BeerTypes.PILSNER,
     description:
       'Cerveja clara e refrescante com notas de malte e lúpulo nobre, finalização limpa e cítrica.',
-    imgPath: 'https://picsum.photos/seed/pilsner1/300/200',
+    imgPath: 'assets/imgs/beers/imagem_pilsner.png',
     abv: 4.8,
     ibu: 25,
     price: 12.9,
@@ -22,7 +22,7 @@ export const getBeerListOne = (breweryId: number): Beer[] => [
     type: BeerTypes.PILSNER,
     description:
       'Pilsen brasileira premium, leve e cristalina, com aroma floral e sabor equilibrado.',
-    imgPath: 'https://picsum.photos/seed/pilsner2/300/200',
+    imgPath: 'assets/imgs/beers/imagem_pilsner.png',
     abv: 4.5,
     ibu: 22,
     price: 11.9,
@@ -35,7 +35,7 @@ export const getBeerListOne = (breweryId: number): Beer[] => [
     type: BeerTypes.IPA,
     description:
       'IPA encorpada com intenso aroma de lúpulos americanos, notas de frutas tropicais e pinho.',
-    imgPath: 'https://picsum.photos/seed/ipa1/300/200',
+    imgPath: 'assets/imgs/beers/imagem_ipa.png',
     abv: 6.8,
     ibu: 65,
     price: 18.9,
@@ -48,7 +48,7 @@ export const getBeerListOne = (breweryId: number): Beer[] => [
     type: BeerTypes.IPA,
     description:
       'IPA tropical com manga e maracujá, perfeita harmonia entre amargor e frutas brasileiras.',
-    imgPath: 'https://picsum.photos/seed/ipa2/300/200',
+    imgPath: 'assets/imgs/beers/imagem_ipa.png',
     abv: 6.2,
     ibu: 55,
     price: 17.9,
@@ -61,7 +61,7 @@ export const getBeerListOne = (breweryId: number): Beer[] => [
     type: BeerTypes.STOUT,
     description:
       'Stout robusta com notas intensas de café torrado e chocolate amargo.',
-    imgPath: 'https://picsum.photos/seed/stout1/300/200',
+    imgPath: 'assets/imgs/beers/imagem_stout.png',
     abv: 5.8,
     ibu: 35,
     price: 15.9,
@@ -74,7 +74,7 @@ export const getBeerListOne = (breweryId: number): Beer[] => [
     type: BeerTypes.STOUT,
     description:
       'Milk stout cremosa com adição de café especial brasileiro, suave e aveludada.',
-    imgPath: 'https://picsum.photos/seed/stout2/300/200',
+    imgPath: 'assets/imgs/beers/imagem_stout.png',
     abv: 6.0,
     ibu: 30,
     price: 16.9,
@@ -87,7 +87,7 @@ export const getBeerListOne = (breweryId: number): Beer[] => [
     type: BeerTypes.WEISS,
     description:
       'Cerveja de trigo alemã com notas de banana e cravo, refrescante e turva.',
-    imgPath: 'https://picsum.photos/seed/weiss1/300/200',
+    imgPath: 'assets/imgs/beers/imagem_weiss.png',
     abv: 5.2,
     ibu: 12,
     price: 14.9,
@@ -100,7 +100,7 @@ export const getBeerListOne = (breweryId: number): Beer[] => [
     type: BeerTypes.WEISS,
     description:
       'Weissbier brasileira com trigo local, leve e aromática com toques cítricos.',
-    imgPath: 'https://picsum.photos/seed/weiss2/300/200',
+    imgPath: 'assets/imgs/beers/imagem_weiss.png',
     abv: 5.0,
     ibu: 15,
     price: 13.9,
@@ -113,7 +113,7 @@ export const getBeerListOne = (breweryId: number): Beer[] => [
     type: BeerTypes.LAGER,
     description:
       'Lager não filtrada no estilo alemão, sabor rico em malte com final seco.',
-    imgPath: 'https://picsum.photos/seed/lager1/300/200',
+    imgPath: 'assets/imgs/beers/imagem_lager.png',
     abv: 5.2,
     ibu: 20,
     price: 13.9,
@@ -126,7 +126,7 @@ export const getBeerListOne = (breweryId: number): Beer[] => [
     type: BeerTypes.LAGER,
     description:
       'Lager leve e dourada, perfeita para o clima tropical, com notas sutis de malte.',
-    imgPath: 'https://picsum.photos/seed/lager2/300/200',
+    imgPath: 'assets/imgs/beers/imagem_lager.png',
     abv: 4.7,
     ibu: 18,
     price: 11.9,
@@ -142,7 +142,7 @@ export const getBeerListTwo = (breweryId: number): Beer[] => [
     type: BeerTypes.PILSNER,
     description:
       'Clássica pilsner tcheca com malte moraviano e lúpulo Saaz, sabor refinado e amargor elegante.',
-    imgPath: 'https://picsum.photos/seed/pilsner3/300/200',
+    imgPath: 'assets/imgs/beers/imagem_pilsner.png',
     abv: 4.9,
     ibu: 28,
     price: 14.9,
@@ -155,7 +155,7 @@ export const getBeerListTwo = (breweryId: number): Beer[] => [
     type: BeerTypes.PILSNER,
     description:
       'Pilsner inspirada nos Alpes, cristalina e refrescante com notas herbais.',
-    imgPath: 'https://picsum.photos/seed/pilsner4/300/200',
+    imgPath: 'assets/imgs/beers/imagem_pilsner.png',
     abv: 5.0,
     ibu: 26,
     price: 13.9,
@@ -168,7 +168,7 @@ export const getBeerListTwo = (breweryId: number): Beer[] => [
     type: BeerTypes.IPA,
     description:
       'IPA americana intensa com blend de lúpulos do Pacífico, notas de pinho e citrus.',
-    imgPath: 'https://picsum.photos/seed/ipa3/300/200',
+    imgPath: 'assets/imgs/beers/imagem_ipa.png',
     abv: 7.2,
     ibu: 70,
     price: 19.9,
@@ -180,7 +180,7 @@ export const getBeerListTwo = (breweryId: number): Beer[] => [
     name: 'Hazy Tropical IPA',
     type: BeerTypes.IPA,
     description: 'New England IPA nebulosa com manga, maracujá e abacaxi.',
-    imgPath: 'https://picsum.photos/seed/ipa4/300/200',
+    imgPath: 'assets/imgs/beers/imagem_ipa.png',
     abv: 6.5,
     ibu: 45,
     price: 18.9,
@@ -192,7 +192,7 @@ export const getBeerListTwo = (breweryId: number): Beer[] => [
     name: 'Imperial Stout',
     type: BeerTypes.STOUT,
     description: 'Stout imperial potente com notas de cacau, café e baunilha.',
-    imgPath: 'https://picsum.photos/seed/stout3/300/200',
+    imgPath: 'assets/imgs/beers/imagem_stout.png',
     abv: 9.0,
     ibu: 60,
     price: 22.9,
@@ -205,7 +205,7 @@ export const getBeerListTwo = (breweryId: number): Beer[] => [
     type: BeerTypes.STOUT,
     description:
       'Stout aveludada com aveia, sabores de chocolate ao leite e caramelo.',
-    imgPath: 'https://picsum.photos/seed/stout4/300/200',
+    imgPath: 'assets/imgs/beers/imagem_stout.png',
     abv: 5.5,
     ibu: 28,
     price: 16.9,
@@ -218,7 +218,7 @@ export const getBeerListTwo = (breweryId: number): Beer[] => [
     type: BeerTypes.WEISS,
     description:
       'Weissbier bávara tradicional com forte perfil de banana e cravo.',
-    imgPath: 'https://picsum.photos/seed/weiss3/300/200',
+    imgPath: 'assets/imgs/beers/imagem_weiss.png',
     abv: 5.4,
     ibu: 14,
     price: 15.9,
@@ -230,7 +230,7 @@ export const getBeerListTwo = (breweryId: number): Beer[] => [
     name: 'Summer Weiss',
     type: BeerTypes.WEISS,
     description: 'Cerveja de trigo leve e cítrica, perfeita para o verão.',
-    imgPath: 'https://picsum.photos/seed/weiss4/300/200',
+    imgPath: 'assets/imgs/beers/imagem_weiss.png',
     abv: 4.8,
     ibu: 12,
     price: 14.9,
@@ -243,7 +243,7 @@ export const getBeerListTwo = (breweryId: number): Beer[] => [
     type: BeerTypes.LAGER,
     description:
       'Lager austríaca com maltes especiais, cor âmbar e sabor maltado.',
-    imgPath: 'https://picsum.photos/seed/lager3/300/200',
+    imgPath: 'assets/imgs/beers/imagem_lager.png',
     abv: 5.3,
     ibu: 22,
     price: 14.9,
@@ -255,7 +255,7 @@ export const getBeerListTwo = (breweryId: number): Beer[] => [
     name: 'Helles Lager',
     type: BeerTypes.LAGER,
     description: 'Lager alemã dourada e límpida com maltes premium.',
-    imgPath: 'https://picsum.photos/seed/lager4/300/200',
+    imgPath: 'assets/imgs/beers/imagem_lager.png',
     abv: 4.9,
     ibu: 18,
     price: 13.9,
@@ -271,7 +271,7 @@ export const getBeerListThree = (breweryId: number): Beer[] => [
     type: BeerTypes.PILSNER,
     description:
       'Pilsner premium com lúpulos nobres europeus e maltes selecionados.',
-    imgPath: 'https://picsum.photos/seed/pilsner5/300/200',
+    imgPath: 'assets/imgs/beers/imagem_pilsner.png',
     abv: 5.1,
     ibu: 30,
     price: 15.9,
@@ -284,7 +284,7 @@ export const getBeerListThree = (breweryId: number): Beer[] => [
     type: BeerTypes.PILSNER,
     description:
       'Pilsner extra clara e cristalina com final seco e refrescante.',
-    imgPath: 'https://picsum.photos/seed/pilsner6/300/200',
+    imgPath: 'assets/imgs/beers/imagem_pilsner.png',
     abv: 4.7,
     ibu: 25,
     price: 12.9,
@@ -297,7 +297,7 @@ export const getBeerListThree = (breweryId: number): Beer[] => [
     type: BeerTypes.IPA,
     description:
       'IPA dupla explosiva com lúpulos raros e aroma intenso de frutas tropicais.',
-    imgPath: 'https://picsum.photos/seed/ipa5/300/200',
+    imgPath: 'assets/imgs/beers/imagem_ipa.png',
     abv: 8.5,
     ibu: 85,
     price: 23.9,
@@ -309,7 +309,7 @@ export const getBeerListThree = (breweryId: number): Beer[] => [
     name: 'Session IPA',
     type: BeerTypes.IPA,
     description: 'IPA leve e sessionável com notas cítricas e final limpo.',
-    imgPath: 'https://picsum.photos/seed/ipa6/300/200',
+    imgPath: 'assets/imgs/beers/imagem_ipa.png',
     abv: 4.5,
     ibu: 40,
     price: 16.9,
@@ -322,7 +322,7 @@ export const getBeerListThree = (breweryId: number): Beer[] => [
     type: BeerTypes.STOUT,
     description:
       'Stout com cacau orgânico, notas intensas de chocolate amargo.',
-    imgPath: 'https://picsum.photos/seed/stout5/300/200',
+    imgPath: 'assets/imgs/beers/imagem_stout.png',
     abv: 6.2,
     ibu: 35,
     price: 17.9,
@@ -334,7 +334,7 @@ export const getBeerListThree = (breweryId: number): Beer[] => [
     name: 'Coconut Stout',
     type: BeerTypes.STOUT,
     description: 'Stout tropical com coco torrado e baunilha natural.',
-    imgPath: 'https://picsum.photos/seed/stout6/300/200',
+    imgPath: 'assets/imgs/beers/imagem_stout.png',
     abv: 6.0,
     ibu: 32,
     price: 18.9,
@@ -347,7 +347,7 @@ export const getBeerListThree = (breweryId: number): Beer[] => [
     type: BeerTypes.WEISS,
     description:
       'Weissbier escura com maltes torrados e especiarias tradicionais.',
-    imgPath: 'https://picsum.photos/seed/weiss5/300/200',
+    imgPath: 'assets/imgs/beers/imagem_weiss.png',
     abv: 5.3,
     ibu: 15,
     price: 15.9,
@@ -359,7 +359,7 @@ export const getBeerListThree = (breweryId: number): Beer[] => [
     name: 'Honey Weiss',
     type: BeerTypes.WEISS,
     description: 'Cerveja de trigo com mel silvestre, suave e aromática.',
-    imgPath: 'https://picsum.photos/seed/weiss6/300/200',
+    imgPath: 'assets/imgs/beers/imagem_weiss.png',
     abv: 5.0,
     ibu: 13,
     price: 16.9,
@@ -371,7 +371,7 @@ export const getBeerListThree = (breweryId: number): Beer[] => [
     name: 'Czech Lager',
     type: BeerTypes.LAGER,
     description: 'Lager tcheca tradicional com malte Moravia e lúpulo Saaz.',
-    imgPath: 'https://picsum.photos/seed/lager5/300/200',
+    imgPath: 'assets/imgs/beers/imagem_lager.png',
     abv: 4.8,
     ibu: 24,
     price: 14.9,
@@ -383,7 +383,7 @@ export const getBeerListThree = (breweryId: number): Beer[] => [
     name: 'Dark Lager',
     type: BeerTypes.LAGER,
     description: 'Lager escura com notas de caramelo e torrado suave.',
-    imgPath: 'https://picsum.photos/seed/lager6/300/200',
+    imgPath: 'assets/imgs/beers/imagem_lager.png',
     abv: 5.0,
     ibu: 20,
     price: 15.9,
@@ -399,7 +399,7 @@ export const getBeerListFour = (breweryId: number): Beer[] => [
     type: BeerTypes.PILSNER,
     description:
       'Pilsen artesanal com toque de rapadura, combinando a tradição europeia com sabores do nordeste brasileiro.',
-    imgPath: 'https://picsum.photos/seed/pilsner7/300/200',
+    imgPath: 'assets/imgs/beers/imagem_pilsner.png',
     abv: 4.6,
     ibu: 23,
     price: 13.9,
@@ -412,7 +412,7 @@ export const getBeerListFour = (breweryId: number): Beer[] => [
     type: BeerTypes.IPA,
     description:
       'IPA tropical com adição de cupuaçu e maracujá da Amazônia, equilibrando notas frutadas com amargor pronunciado.',
-    imgPath: 'https://picsum.photos/seed/ipa7/300/200',
+    imgPath: 'assets/imgs/beers/imagem_ipa.png',
     abv: 6.5,
     ibu: 60,
     price: 19.9,
@@ -425,7 +425,7 @@ export const getBeerListFour = (breweryId: number): Beer[] => [
     type: BeerTypes.STOUT,
     description:
       'Stout encorpada com café especial de Minas Gerais e cacau orgânico da Bahia, rica e aromática.',
-    imgPath: 'https://picsum.photos/seed/stout7/300/200',
+    imgPath: 'assets/imgs/beers/imagem_stout.png',
     abv: 6.8,
     ibu: 38,
     price: 18.9,
@@ -438,7 +438,7 @@ export const getBeerListFour = (breweryId: number): Beer[] => [
     type: BeerTypes.WEISS,
     description:
       'Cerveja de trigo com banana-prata madura e especiarias brasileiras, refrescante e aromática.',
-    imgPath: 'https://picsum.photos/seed/weiss7/300/200',
+    imgPath: 'assets/imgs/beers/imagem_weiss.png',
     abv: 5.1,
     ibu: 14,
     price: 15.9,
@@ -451,7 +451,7 @@ export const getBeerListFour = (breweryId: number): Beer[] => [
     type: BeerTypes.LAGER,
     description:
       'Lager leve e cristalina com ingredientes da Mata Atlântica, notas sutis de ervas nativas.',
-    imgPath: 'https://picsum.photos/seed/lager7/300/200',
+    imgPath: 'assets/imgs/beers/imagem_lager.png',
     abv: 4.8,
     ibu: 19,
     price: 14.9,
@@ -467,7 +467,7 @@ export const getBeerListFive = (breweryId: number): Beer[] => [
     type: BeerTypes.PILSNER,
     description:
       'Pilsen refrescante com arroz vermelho do Pantanal, proporcionando um sabor único e regional.',
-    imgPath: 'https://picsum.photos/seed/pilsner8/300/200',
+    imgPath: 'assets/imgs/beers/imagem_pilsner.png',
     abv: 4.7,
     ibu: 24,
     price: 13.9,
@@ -480,7 +480,7 @@ export const getBeerListFive = (breweryId: number): Beer[] => [
     type: BeerTypes.IPA,
     description:
       'IPA com lúpulos cultivados em Santa Catarina, notas cítricas e florais com toque de mel de bracatinga.',
-    imgPath: 'https://picsum.photos/seed/ipa8/300/200',
+    imgPath: 'assets/imgs/beers/imagem_ipa.png',
     abv: 6.3,
     ibu: 58,
     price: 18.9,
@@ -493,7 +493,7 @@ export const getBeerListFive = (breweryId: number): Beer[] => [
     type: BeerTypes.STOUT,
     description:
       'Stout robusta com café do Espírito Santo e chocolate artesanal local, cremosa e intensa.',
-    imgPath: 'https://picsum.photos/seed/stout8/300/200',
+    imgPath: 'assets/imgs/beers/imagem_stout.png',
     abv: 6.5,
     ibu: 34,
     price: 17.9,
@@ -506,7 +506,7 @@ export const getBeerListFive = (breweryId: number): Beer[] => [
     type: BeerTypes.WEISS,
     description:
       'Cerveja de trigo com rapadura e especiarias do sertão, aroma tropical único.',
-    imgPath: 'https://picsum.photos/seed/weiss8/300/200',
+    imgPath: 'assets/imgs/beers/imagem_weiss.png',
     abv: 5.0,
     ibu: 13,
     price: 15.9,
@@ -519,7 +519,7 @@ export const getBeerListFive = (breweryId: number): Beer[] => [
     type: BeerTypes.LAGER,
     description:
       'Lager tradicional com malte produzido no Rio Grande do Sul, sabor maltado e encorpado.',
-    imgPath: 'https://picsum.photos/seed/lager8/300/200',
+    imgPath: 'assets/imgs/beers/imagem_lager.png',
     abv: 5.1,
     ibu: 21,
     price: 14.9,
@@ -535,7 +535,7 @@ export const getBeerListSix = (breweryId: number): Beer[] => [
     type: BeerTypes.PILSNER,
     description:
       'Pilsen leve e refrescante com toque de mate, perfeita para a praia.',
-    imgPath: 'https://picsum.photos/seed/pilsner9/300/200',
+    imgPath: 'assets/imgs/beers/imagem_pilsner.png',
     abv: 4.5,
     ibu: 22,
     price: 13.9,
@@ -548,7 +548,7 @@ export const getBeerListSix = (breweryId: number): Beer[] => [
     type: BeerTypes.IPA,
     description:
       'IPA com pequi e frutos do cerrado, equilibrando amargor com notas frutadas nativas.',
-    imgPath: 'https://picsum.photos/seed/ipa9/300/200',
+    imgPath: 'assets/imgs/beers/imagem_ipa.png',
     abv: 6.7,
     ibu: 62,
     price: 19.9,
@@ -561,7 +561,7 @@ export const getBeerListSix = (breweryId: number): Beer[] => [
     type: BeerTypes.STOUT,
     description:
       'Stout com cacau amazônico e castanha-do-pará, rica em sabores regionais.',
-    imgPath: 'https://picsum.photos/seed/stout9/300/200',
+    imgPath: 'assets/imgs/beers/imagem_stout.png',
     abv: 6.4,
     ibu: 36,
     price: 18.9,
@@ -574,7 +574,7 @@ export const getBeerListSix = (breweryId: number): Beer[] => [
     type: BeerTypes.WEISS,
     description:
       'Weiss com coco e manga, refrescante com toques tropicais do litoral.',
-    imgPath: 'https://picsum.photos/seed/weiss9/300/200',
+    imgPath: 'assets/imgs/beers/imagem_weiss.png',
     abv: 4.9,
     ibu: 12,
     price: 15.9,
@@ -587,7 +587,7 @@ export const getBeerListSix = (breweryId: number): Beer[] => [
     type: BeerTypes.LAGER,
     description:
       'Lager suave com toque de mel de flores silvestres de Minas Gerais.',
-    imgPath: 'https://picsum.photos/seed/lager9/300/200',
+    imgPath: 'assets/imgs/beers/imagem_lager.png',
     abv: 4.8,
     ibu: 18,
     price: 14.9,
@@ -603,7 +603,7 @@ export const getBeerListSeven = (breweryId: number): Beer[] => [
     type: BeerTypes.PILSNER,
     description:
       'Pilsen moderna com ingredientes orgânicos de pequenos produtores do interior de São Paulo.',
-    imgPath: 'https://picsum.photos/seed/pilsner10/300/200',
+    imgPath: 'assets/imgs/beers/imagem_pilsner.png',
     abv: 4.8,
     ibu: 25,
     price: 14.9,
@@ -616,7 +616,7 @@ export const getBeerListSeven = (breweryId: number): Beer[] => [
     type: BeerTypes.IPA,
     description:
       'IPA com frutas cítricas do litoral brasileiro, refrescante e aromática.',
-    imgPath: 'https://picsum.photos/seed/ipa10/300/200',
+    imgPath: 'assets/imgs/beers/imagem_ipa.png',
     abv: 6.0,
     ibu: 55,
     price: 18.9,
@@ -629,7 +629,7 @@ export const getBeerListSeven = (breweryId: number): Beer[] => [
     type: BeerTypes.STOUT,
     description:
       'Stout com café do cerrado goiano e baunilha nativa, complexa e aromática.',
-    imgPath: 'https://picsum.photos/seed/stout10/300/200',
+    imgPath: 'assets/imgs/beers/imagem_stout.png',
     abv: 6.2,
     ibu: 32,
     price: 17.9,
@@ -642,7 +642,7 @@ export const getBeerListSeven = (breweryId: number): Beer[] => [
     type: BeerTypes.WEISS,
     description:
       'Weiss com frutas serranas e especiarias da região sul, refrescante e equilibrada.',
-    imgPath: 'https://picsum.photos/seed/weiss10/300/200',
+    imgPath: 'assets/imgs/beers/imagem_weiss.png',
     abv: 5.2,
     ibu: 14,
     price: 16.9,
@@ -655,7 +655,7 @@ export const getBeerListSeven = (breweryId: number): Beer[] => [
     type: BeerTypes.LAGER,
     description:
       'Lager clean e moderna como a capital, com maltes selecionados do centro-oeste.',
-    imgPath: 'https://picsum.photos/seed/lager10/300/200',
+    imgPath: 'assets/imgs/beers/imagem_lager.png',
     abv: 4.9,
     ibu: 20,
     price: 15.9,
@@ -671,7 +671,7 @@ export const getBeerListEight = (breweryId: number): Beer[] => [
     type: BeerTypes.PILSNER,
     description:
       'Pilsen com ingredientes do Vale do Paraíba, leve e cristalina.',
-    imgPath: 'https://picsum.photos/seed/pilsner11/300/200',
+    imgPath: 'assets/imgs/beers/imagem_pilsner.png',
     abv: 4.6,
     ibu: 23,
     price: 13.9,
@@ -684,7 +684,7 @@ export const getBeerListEight = (breweryId: number): Beer[] => [
     type: BeerTypes.IPA,
     description:
       'IPA com ervas aromáticas da Serra da Mantiqueira, complexa e única.',
-    imgPath: 'https://picsum.photos/seed/ipa11/300/200',
+    imgPath: 'assets/imgs/beers/imagem_ipa.png',
     abv: 6.4,
     ibu: 59,
     price: 19.9,
@@ -697,7 +697,7 @@ export const getBeerListEight = (breweryId: number): Beer[] => [
     type: BeerTypes.STOUT,
     description:
       'Stout com café de altitude e chocolate artesanal serrano, encorpada e rica.',
-    imgPath: 'https://picsum.photos/seed/stout11/300/200',
+    imgPath: 'assets/imgs/beers/imagem_stout.png',
     abv: 6.6,
     ibu: 35,
     price: 18.9,
@@ -710,7 +710,7 @@ export const getBeerListEight = (breweryId: number): Beer[] => [
     type: BeerTypes.WEISS,
     description:
       'Weiss com trigo do interior e mel silvestre, suave e aromática.',
-    imgPath: 'https://picsum.photos/seed/weiss11/300/200',
+    imgPath: 'assets/imgs/beers/imagem_weiss.png',
     abv: 5.0,
     ibu: 13,
     price: 15.9,
@@ -723,7 +723,7 @@ export const getBeerListEight = (breweryId: number): Beer[] => [
     type: BeerTypes.LAGER,
     description:
       'Lager tropical com toque de frutas cítricas do interior do Rio.',
-    imgPath: 'https://picsum.photos/seed/lager11/300/200',
+    imgPath: 'assets/imgs/beers/imagem_lager.png',
     abv: 4.7,
     ibu: 19,
     price: 14.9,
@@ -739,7 +739,7 @@ export const getBeerListNine = (breweryId: number): Beer[] => [
     type: BeerTypes.PILSNER,
     description:
       'Pilsen com ingredientes sustentáveis da Amazônia, sabor único e refrescante.',
-    imgPath: 'https://picsum.photos/seed/pilsner12/300/200',
+    imgPath: 'assets/imgs/beers/imagem_pilsner.png',
     abv: 4.7,
     ibu: 24,
     price: 14.9,
@@ -752,7 +752,7 @@ export const getBeerListNine = (breweryId: number): Beer[] => [
     type: BeerTypes.IPA,
     description:
       'IPA baiana com pitadas de dendê e especiarias locais, tropical e marcante.',
-    imgPath: 'https://picsum.photos/seed/ipa12/300/200',
+    imgPath: 'assets/imgs/beers/imagem_ipa.png',
     abv: 6.6,
     ibu: 61,
     price: 19.9,
@@ -765,7 +765,7 @@ export const getBeerListNine = (breweryId: number): Beer[] => [
     type: BeerTypes.STOUT,
     description:
       'Stout com café porto de Santos e cacau do sul da Bahia, robusta e complexa.',
-    imgPath: 'https://picsum.photos/seed/stout12/300/200',
+    imgPath: 'assets/imgs/beers/imagem_stout.png',
     abv: 6.5,
     ibu: 37,
     price: 18.9,
@@ -778,7 +778,7 @@ export const getBeerListNine = (breweryId: number): Beer[] => [
     type: BeerTypes.WEISS,
     description:
       'Weiss com banana orgânica e especiarias de colônias alemãs do sul.',
-    imgPath: 'https://picsum.photos/seed/weiss12/300/200',
+    imgPath: 'assets/imgs/beers/imagem_weiss.png',
     abv: 5.1,
     ibu: 14,
     price: 16.9,
@@ -791,7 +791,7 @@ export const getBeerListNine = (breweryId: number): Beer[] => [
     type: BeerTypes.LAGER,
     description:
       'Lager clara com toque de sal marinho e limão, perfeita para o verão.',
-    imgPath: 'https://picsum.photos/seed/lager12/300/200',
+    imgPath: 'assets/imgs/beers/imagem_lager.png',
     abv: 4.6,
     ibu: 18,
     price: 14.9,
@@ -807,7 +807,7 @@ export const getBeerListTen = (breweryId: number): Beer[] => [
     type: BeerTypes.PILSNER,
     description:
       'Pilsen com água mineral do Bonito, cristalina e extremamente refrescante.',
-    imgPath: 'https://picsum.photos/seed/pilsner13/300/200',
+    imgPath: 'assets/imgs/beers/imagem_pilsner.png',
     abv: 4.5,
     ibu: 22,
     price: 13.9,
@@ -820,7 +820,7 @@ export const getBeerListTen = (breweryId: number): Beer[] => [
     type: BeerTypes.IPA,
     description:
       'IPA com notas de frutas tropicais dos lençóis maranhenses, exótica e aromática.',
-    imgPath: 'https://picsum.photos/seed/ipa13/300/200',
+    imgPath: 'assets/imgs/beers/imagem_ipa.png',
     abv: 6.3,
     ibu: 57,
     price: 18.9,
@@ -833,7 +833,7 @@ export const getBeerListTen = (breweryId: number): Beer[] => [
     type: BeerTypes.STOUT,
     description:
       'Stout com café dos campos sulinos e chocolate artesanal gaúcho.',
-    imgPath: 'https://picsum.photos/seed/stout13/300/200',
+    imgPath: 'assets/imgs/beers/imagem_stout.png',
     abv: 6.4,
     ibu: 33,
     price: 17.9,
@@ -846,7 +846,7 @@ export const getBeerListTen = (breweryId: number): Beer[] => [
     type: BeerTypes.WEISS,
     description:
       'Weiss com trigo do Vale do Itajaí e especiarias locais, suave e aromática.',
-    imgPath: 'https://picsum.photos/seed/weiss13/300/200',
+    imgPath: 'assets/imgs/beers/imagem_weiss.png',
     abv: 5.0,
     ibu: 13,
     price: 15.9,
@@ -859,7 +859,7 @@ export const getBeerListTen = (breweryId: number): Beer[] => [
     type: BeerTypes.LAGER,
     description:
       'Lager produzida em altitude, com maltes serranos e água de nascente.',
-    imgPath: 'https://picsum.photos/seed/lager13/300/200',
+    imgPath: 'assets/imgs/beers/imagem_lager.png',
     abv: 4.9,
     ibu: 20,
     price: 14.9,
@@ -875,7 +875,7 @@ export const getBeerListEleven = (breweryId: number): Beer[] => [
     type: BeerTypes.PILSNER,
     description:
       'Pilsen com mandioca do agreste nordestino, sabor autêntico e regional.',
-    imgPath: 'https://picsum.photos/seed/pilsner14/300/200',
+    imgPath: 'assets/imgs/beers/imagem_pilsner.png',
     abv: 4.8,
     ibu: 24,
     price: 13.9,
@@ -888,7 +888,7 @@ export const getBeerListEleven = (breweryId: number): Beer[] => [
     type: BeerTypes.IPA,
     description:
       'IPA com toques de frutas típicas do mangue pernambucano, única e marcante.',
-    imgPath: 'https://picsum.photos/seed/ipa14/300/200',
+    imgPath: 'assets/imgs/beers/imagem_ipa.png',
     abv: 6.5,
     ibu: 60,
     price: 19.9,
@@ -901,7 +901,7 @@ export const getBeerListEleven = (breweryId: number): Beer[] => [
     type: BeerTypes.STOUT,
     description:
       'Stout com café do cerrado e castanhas do Araguaia, encorpada e terrosa.',
-    imgPath: 'https://picsum.photos/seed/stout14/300/200',
+    imgPath: 'assets/imgs/beers/imagem_stout.png',
     abv: 6.6,
     ibu: 35,
     price: 18.9,
@@ -914,7 +914,7 @@ export const getBeerListEleven = (breweryId: number): Beer[] => [
     type: BeerTypes.WEISS,
     description:
       'Weiss com trigo das antigas missões e erva-mate, tradicional com toque regional.',
-    imgPath: 'https://picsum.photos/seed/weiss14/300/200',
+    imgPath: 'assets/imgs/beers/imagem_weiss.png',
     abv: 5.2,
     ibu: 14,
     price: 16.9,
@@ -927,7 +927,7 @@ export const getBeerListEleven = (breweryId: number): Beer[] => [
     type: BeerTypes.LAGER,
     description:
       'Lager com maltes da fronteira sul, influência gaúcha e uruguaia.',
-    imgPath: 'https://picsum.photos/seed/lager14/300/200',
+    imgPath: 'assets/imgs/beers/imagem_lager.png',
     abv: 4.8,
     ibu: 19,
     price: 14.9,
@@ -943,7 +943,7 @@ export const getBeerListTwelve = (breweryId: number): Beer[] => [
     type: BeerTypes.PILSNER,
     description:
       'Pilsen com água da Chapada Diamantina, pura e cristalina como os diamantes.',
-    imgPath: 'https://picsum.photos/seed/pilsner15/300/200',
+    imgPath: 'assets/imgs/beers/imagem_pilsner.png',
     abv: 4.7,
     ibu: 23,
     price: 14.9,
@@ -956,7 +956,7 @@ export const getBeerListTwelve = (breweryId: number): Beer[] => [
     type: BeerTypes.IPA,
     description:
       'IPA com ervas aromáticas das Gerais, complexidade única das montanhas mineiras.',
-    imgPath: 'https://picsum.photos/seed/ipa15/300/200',
+    imgPath: 'assets/imgs/beers/imagem_ipa.png',
     abv: 6.4,
     ibu: 58,
     price: 18.9,
@@ -969,7 +969,7 @@ export const getBeerListTwelve = (breweryId: number): Beer[] => [
     type: BeerTypes.STOUT,
     description:
       'Stout com café da Serra do Mar e chocolate artesanal paulista, intensa e marcante.',
-    imgPath: 'https://picsum.photos/seed/stout15/300/200',
+    imgPath: 'assets/imgs/beers/imagem_stout.png',
     abv: 6.5,
     ibu: 36,
     price: 17.9,
@@ -982,7 +982,7 @@ export const getBeerListTwelve = (breweryId: number): Beer[] => [
     type: BeerTypes.WEISS,
     description:
       'Weiss com trigo do cerrado e mel de flores nativas, aroma único do Brasil central.',
-    imgPath: 'https://picsum.photos/seed/weiss15/300/200',
+    imgPath: 'assets/imgs/beers/imagem_weiss.png',
     abv: 5.1,
     ibu: 13,
     price: 15.9,
@@ -995,7 +995,7 @@ export const getBeerListTwelve = (breweryId: number): Beer[] => [
     type: BeerTypes.LAGER,
     description:
       'Lager dos canyons do sul, com água mineral pura e maltes especiais.',
-    imgPath: 'https://picsum.photos/seed/lager15/300/200',
+    imgPath: 'assets/imgs/beers/imagem_lager.png',
     abv: 4.9,
     ibu: 20,
     price: 14.9,

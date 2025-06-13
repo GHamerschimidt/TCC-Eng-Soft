@@ -24,4 +24,8 @@ export class CardComponent {
   isDetailedCardButtonVariant(): boolean {
     return this.variant === CardVariant.DetailedCardButton;
   }
+
+  isSimpleCardButtonVariant(): boolean {
+    return this.variant === CardVariant.SimpleCardButton;
+  }
 }
